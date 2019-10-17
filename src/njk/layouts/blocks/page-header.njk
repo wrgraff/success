@@ -1,3 +1,44 @@
+{% set menuItems = [
+    {
+        name: "Недвижимость",
+        address: 'estate'
+    },{
+        name: "ДДУ",
+        address: 'ddu'
+    },{
+		name: "Регистрация прав",
+        address: 'ddu'
+    },{
+		name: "Межевание",
+        address: 'ddu'
+    },{
+		name: "Суды/ Споры",
+        address: 'ddu'
+    },{
+		name: "Наследство",
+        address: 'ddu'
+    },{
+		name: "Прочие услуги",
+        address: 'ddu'
+    }
+] %}
+{% macro addMenuItem(name, address) %}
+    <li class="menu__item{{ ' menu__item_active' if (activePage == address) }}">
+        <a href="/{{ address }}/" class="menu__link">{{ name }}</a>
+    </li>
+{% endmacro %}
+
+{# Breadcrumbs items gets from page (for generating correct addresses) #}
+{% macro addBreadcrumbsItem(name, address) %}
+    <li class="breadcrumbs__item">
+		{% if address %}
+			<a href="/{{ address }}/" class="breadcrumbs__link">{{ name }}</a>
+		{% else %}
+			{{ name }}
+		{% endif %}
+    </li>
+{% endmacro %}
+
 <header class="page-header">
 	<div class="page-header__info container">
 		<a href="/" class="page-header__logo logo">
@@ -17,29 +58,13 @@
 
 	<nav class="page-header__nav container">
 		<div class="menu">
-			<p class="menu__title">Услуги</p>
+			{% if not activePage %}
+				<p class="menu__title">Услуги</p>
+			{% endif %}
 			<ul class="menu__list">
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">Недвижимость</a>
-				</li>
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">ДДУ</a>
-				</li>
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">Регистрация прав</a>
-				</li>
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">Межевание</a>
-				</li>
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">Суды/ Споры</a>
-				</li>
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">Наследство</a>
-				</li>
-				<li class="menu__item">
-					<a href="/estate/" class="menu__link">Прочие услуги</a>
-				</li>
+				{% for item in menuItems %}
+					{{ addMenuItem(item.name, item.address) }}
+				{% endfor %}
 			</ul>
 		</div>
 
@@ -52,4 +77,15 @@
 			</li>
 		</ul>
 	</nav>
+
+	{% if activePage %}
+		<ul class="breadcrumbs">
+			<li class="breadcrumbs__item">
+				<a href="/" class="breadcrumbs__link">Главная</a>
+			</li>
+			{% for item in breadcrumbsItems %}
+				{{ addBreadcrumbsItem(item.name, item.address) }}
+			{% endfor %}
+		</ul>
+	{% endif %}
 </header>
