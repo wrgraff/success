@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>{{ title }} {{ ' — ' if (title != '') }} Site</title>
+    <title>{{ title }} {{ ' — ' if (title != '') }} ЦЭР Успех</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
@@ -17,7 +17,7 @@
     <link rel="icon" href="/static/img/favicons/base-64x64.png" sizes="64x64">
 
     <!-- MS -->
-    <meta name="application-name" content="Site name">
+    <meta name="application-name" content="ЦЭР Успех">
     <meta name="msapplication-TileImage" content="/static/img/favicons/tile.jpg">
     <meta name="msapplication-config" content="/browserconfig.xml">
     <!-- OS X -->
@@ -34,25 +34,21 @@
     <meta property="og:description" content="get from meta description" />
     <meta property="og:image" content="/static/img/favicons/og.png" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Site name" />
+    <meta property="og:site_name" content="ЦЭР Успех" />
     <meta property="og:url" content="https://www.site.ru/" />
     <meta property="og:locale" content="ru_RU" />
 </head>
 
 <body>
     <div class="page-layout">
-		<header class="page-header">
-			{% include "blocks/page-header.njk" %}
-		</header>
+		{% include "blocks/page-header.njk" %}
 
 		<main class="page-main">
 			{% block content %}
 			{% endblock %}
 		</main>
 
-		<footer class="page-footer">
-			{% include "blocks/page-footer.njk" %}
-		</footer>
+		{% include "blocks/page-footer.njk" %}
     </div>
 
 	<!-- Scripts -->

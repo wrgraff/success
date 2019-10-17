@@ -1,9 +1,9 @@
 {
     "lang": "ru",
     "dir": "ltr",
-    "name": "Site name",
-    "short_name": "Site name",
-    "description": "Site descr",
+    "name": "Центр Электронной Регистрации Успех",
+    "short_name": "ЦЭР Успех",
+    "description": "Регистрация прав на недвижимость по всей РФ. Решение любых юридических вопросов",
     "icons": [{
             "src": "/static/img/favicons/android-chrome-192x192.png",
             "sizes": "192x192",
