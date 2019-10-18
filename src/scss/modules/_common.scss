@@ -1,4 +1,19 @@
+// Common blocks
 @import "normalize/common";
 @import "typography/common";
+@import "flex/common";
 @import "global/common";
+
+@import "buttons/common";
+@import "menu/common";
+@import "button-menu/common";
+@import "logo/common";
 @import "page/common";
+@import "section/common";
+
+// Containers optional blocks
+@import "promo/common";
+@import "steps/common";
+@import "offers/common";
+@import "person/common";
+@import "feedbacks/common";

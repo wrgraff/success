@@ -1,0 +1,7 @@
+$container-padding: 40px;
+
+.container {
+	max-width: 1252px + ($container-padding * 2);
+	margin: 0 auto;
+	padding: 0 $container-padding;
+}

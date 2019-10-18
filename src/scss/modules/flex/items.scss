@@ -1,0 +1,58 @@
+$flex-orders: 4;
+$flex-order-breakpoints: $breakpoints;
+
+.flex__item_align_start {
+    align-self: flex-start;
+}
+
+.flex__item_align_center {
+    align-self: center;
+}
+
+.flex__item_align_end {
+    align-self: flex-end;
+}
+
+.flex__item_align_stretch {
+    align-self: stretch;
+}
+
+.flex__item_stick_right,
+.flex_gap_0 .flex__item_stick_right {
+    margin-left: auto;
+}
+.flex__item_stick_left,
+.flex_gap_0 .flex__item_stick_left {
+    margin-right: auto;
+}
+.flex__item_stick_bottom,
+.flex_gap_0 .flex__item_stick_bottom {
+    margin-top: auto;
+}
+.flex__item_stick_top,
+.flex_gap_0 .flex__item_stick_top {
+    margin-bottom: auto;
+}
+
+// Orders
+@for $i from 0 through $flex-orders {
+    .flex__item_order_#{$i} {
+        order: $i;
+    }
+    .flex__item_order_r#{$i} {
+        order: -$i;
+    }
+}
+
+@each $breakpoint-name, $breakpoint-value in $flex-order-breakpoints {
+    @media screen and (min-width: $breakpoint-value) {
+        @for $i from 0 through $flex-orders {
+            .flex__item_#{$breakpoint-name}_order_#{$i} {
+                order: $i;
+            }
+            .flex__item_#{$breakpoint-name}_order_r#{$i} {
+                order: -$i;
+            }
+        }
+    }
+}

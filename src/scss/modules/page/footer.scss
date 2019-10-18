@@ -1,3 +1,50 @@
 .page-footer {
     margin-top: auto;
+	padding: 40px 0 54px;
+
+	color: color(white);
+	background-color: color(900-gray);
+
+	a {
+		color: color(white);
+
+		&:hover {
+			color: color(secondary);
+		}
+	}
+}
+
+.page-footer__container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.page-footer__address {
+	max-width: 392px;
+	margin-bottom: 0;
+}
+
+.page-footer__contacts {
+	position: relative;
+	margin: 0;
+	padding: 0 0 0 (34px + $bit);
+	list-style: none;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: $bit / 2;
+		left: 0;
+
+		display: block;
+		width: 34px;
+		height: 34px;
+
+		background-image: url(../img/ico/time.svg);
+	}
+}
+
+.page-footer__contact {
+	margin-bottom: $bit / 4;
 }

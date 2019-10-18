@@ -3,150 +3,171 @@
 {% extends '../layouts/index.njk' %}
 
 {% block content %}
-	<h1>Центр Электронной Регистрации Успех</h1>
+	<h1 class="visually-hidden">Центр Электронной Регистрации Успех</h1>
 
-	<section class="promo">
+	<section class="page-main__section promo">
 		<div class="container">
-			<h2>Наши преимущества</h2>
+			<h2 class="visually-hidden">Наши преимущества</h2>
 			<div class="flex flex_columns_12">
-				<div class="flex__item flex__item_columns_5">
-					<p class="promo__text">Опытные специалисты и юристы</p>
+				<div class="flex__item flex__item_5">
+					<p class="promo__text">Опытные специалисты и&nbsp;юристы</p>
 					<p class="promo__text">Решение любых юридических вопросов при сопровождении опытных юристов</p>
 				</div>
-				<div class="flex__item flex__item_columns_7">
-					<ul class="promo__advantages">
-						<li class="promo__advantage">Профильные специалисты (юристы/ адвокаты)</li>
-						<li class="promo__advantage">Опыт работы специалистов от 10 лет</li>
-						<li class="promo__advantage">Работа по Договору. Полная «чистота» и «прозрачность» в деятельности</li>
-						<li class="promo__advantage">Более 500 успешных дел в суде, а также зарегистрированных сделок</li>
-						<li class="promo__advantage">Экстерриториальный принцип регистрации сделок (по всей РФ)</li>
-						<li class="promo__advantage">Разумные цены на услуги</li>
-					</ul>
-				</div>
+				<ul class="flex__item promo__advantages flex flex_columns_2">
+					<li class="promo__advantage flex__item">
+						<img class="promo__ico" src="/static/img/ico/specialist.svg" alt="" aria-hidden="true">
+						Профильные специалисты (юристы/&nbsp;адвокаты)
+					</li>
+					<li class="promo__advantage flex__item">
+						<img class="promo__ico" src="/static/img/ico/exp.svg" alt="" aria-hidden="true">
+						Опыт работы специалистов&nbsp; от&nbsp;10&nbsp;лет
+					</li>
+					<li class="promo__advantage flex__item">
+						<img class="promo__ico" src="/static/img/ico/calc.svg" alt="" aria-hidden="true">
+						Работа по&nbsp;Договору. Полная «чистота» и&nbsp;«прозрачность» в&nbsp;деятельности
+					</li>
+					<li class="promo__advantage flex__item">
+						<img class="promo__ico" src="/static/img/ico/chess.svg" alt="" aria-hidden="true">
+						Более 500 успешных дел&nbsp;в&nbsp;суде, а&nbsp;также зарегистрированных сделок
+					</li>
+					<li class="promo__advantage flex__item">
+						<img class="promo__ico" src="/static/img/ico/pointer.svg" alt="" aria-hidden="true">
+						Экстерриториальный принцип регистрации сделок (по&nbsp;всей&nbsp;РФ)
+					</li>
+					<li class="promo__advantage flex__item">
+						<img class="promo__ico" src="/static/img/ico/price.svg" alt="" aria-hidden="true">
+						Разумные цены<br>на&nbsp;услуги
+					</li>
+				</ul>
 			</div>
 		</div>
 	</section>
 
-	<section class="section section_steps">
+	<section class="page-main__section section section_steps">
 		<div class="container">
 			<h2 class="section__heading">3 шага для получения результата!</h2>
 
 			<ol class="steps flex flex_columns">
-				<li class="flex__item">
+				<li class="steps__item flex__item">
 					<h3 class="steps__heading">Вы оставляете заявку</h3>
 					<p class="steps__text">Напишите нам письмо прямо на сайте или позвоните по телефону <a href="tel:+78006007448"><strong>8 (800) 600-74-48</strong></a></p>
-					<a href="#" class="steps__button button">Оставить заявку</a>
+					<a href="#" class="steps__button button button_color_secondary">Оставить заявку</a>
 				</li>
-				<li class="flex__item">
+				<li class="steps__item flex__item">
 					<h3 class="steps__heading">Мы свяжемся с Вами</h3>
 					<p class="steps__text">Назначим визит для приема документов / консультацию на удобное для Вас время</p>
-					<a href="#" class="steps__button button">Оставить заявку</a>
+					<a href="#" class="steps__button button button_color_secondary">Оставить заявку</a>
 				</li>
-				<li class="flex__item">
+				<li class="steps__item flex__item">
 					<h3 class="steps__heading">Решаем вопрос</h3>
 					<p class="steps__text">Заключаем договор на оказание услуг и наши специалисты моментально приступают к работе</p>
-					<a href="#" class="steps__button button">Оставить заявку</a>
+					<a href="#" class="steps__button button button_color_secondary">Оставить заявку</a>
 				</li>
 			</ol>
 		</div>
 	</section>
 
-	<section class="section section_offers">
+	<section class="page-main__section section section_offers">
 		<div class="container">
 			<h2 class="section__heading">Популярные предложения Компании</h2>
 
 			<ul class="offers flex flex_columns_3">
-				<li class="flex__item">
+				<li class="offers__item flex__item">
 					<h3 class="offers__heading">Вступить в наследство</h3>
 					<p class="offers__text">Всего 30 минут на заключение Договора с нами и Вы станете законным обладателем наследства</p>
-					<a href="#" class="offers__button button">Получить услугу</a>
+					<a href="#" class="offers__button button button_color_secondary">Получить услугу</a>
 				</li>
-				<li class="flex__item">
+				<li class="offers__item flex__item">
 					<h3 class="offers__heading">Получить неустойку от Застройщика</h3>
 					<p class="offers__text">Всего 30 минут на заключение Договора с нами и Вы станете законным обладателем наследства</p>
-					<a href="#" class="offers__button button">Получить услугу</a>
+					<a href="#" class="offers__button button button_color_secondary">Получить услугу</a>
 				</li>
-				<li class="flex__item">
+				<li class="offers__item flex__item">
 					<h3 class="offers__heading">Выиграть спор в суде</h3>
 					<ul class="offers__list">
 						<li>Только 100% результат</li>
 						<li>Сведения обо всех расходах до заключения Договора</li>
 					</ul>
-					<a href="#" class="offers__button button">Получить услугу</a>
+					<a href="#" class="offers__button button button_color_secondary">Получить услугу</a>
 				</li>
-				<li class="flex__item">
+				<li class="offers__item flex__item">
 					<h3 class="offers__heading">Зарегистрировать собственность?</h3>
 					<p class="offers__text">
 						Срок от 3х дней<br>
 						Стоимость 5 700р.
 					</p>
-					<a href="#" class="offers__button button">Получить услугу</a>
+					<a href="#" class="offers__button button button_color_secondary">Получить услугу</a>
 				</li>
-				<li class="flex__item">
+				<li class="offers__item flex__item">
 					<h3 class="offers__heading">Получили приостановку в Росреестре?</h3>
 					<p class="offers__text">
 						Мы поможем решить все проблемы<br>
 						Стоимость от 5 000р.
 					</p>
-					<a href="#" class="offers__button button">Получить услугу</a>
+					<a href="#" class="offers__button button button_color_secondary">Получить услугу</a>
 				</li>
-				<li class="flex__item">
+				<li class="offers__item flex__item">
 					<h3 class="offers__heading">Вступить в наследство</h3>
 					<p class="offers__text">Всего 30 минут на заключение Договора с нами и Вы станете законным обладателем наследства</p>
-					<a href="#" class="offers__button button">Получить услугу</a>
+					<a href="#" class="offers__button button button_color_secondary">Получить услугу</a>
 				</li>
 			</ul>
 		</div>
 	</section>
 
-	<section class="section section_feedbacks">
+	<section class="page-main__section section section_feedbacks">
 		<div class="container">
-			<h2 class="">Отзывы</h2>
+			<h2 class="visually-hidden">Отзывы</h2>
 
-			<div class="feedbacks">
-				<blockquote class="feedbacks__item">
-					<div class="feedbacks__text">
-						<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
-						<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
-					</div>
-					<cite class="feedbacks__autor person">
-						<img src="" alt="" class="person__avatar">
-						<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
-					</cite>
-				</blockquote>
+			<div class="feedbacks flex flex_columns_2">
+				<div class="feedbacks__img flex__item">
+				</div>
 
-				<blockquote class="feedbacks__item">
-					<div class="feedbacks__text">
-						<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
-						<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
-					</div>
-					<cite class="feedbacks__autor person">
-						<img src="" alt="" class="person__avatar">
-						<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
-					</cite>
-				</blockquote>
+				<div class="feedbacks__list flex__item flex flex_columns_6 flex_justify_center">
+					<blockquote class="feedbacks__item flex__item_4 flex__item_align_center">
+						<div class="feedbacks__text">
+							<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
+							<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
+						</div>
+						<cite class="feedbacks__autor person">
+							<img src="https://via.placeholder.com/80" alt="" class="person__avatar">
+							<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
+						</cite>
+					</blockquote>
 
-				<blockquote class="feedbacks__item">
-					<div class="feedbacks__text">
-						<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
-						<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
-					</div>
-					<cite class="feedbacks__autor person">
-						<img src="" alt="" class="person__avatar">
-						<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
-					</cite>
-				</blockquote>
+					<blockquote class="feedbacks__item flex__item_4">
+						<div class="feedbacks__text">
+							<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
+							<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
+						</div>
+						<cite class="feedbacks__autor person">
+							<img src="https://via.placeholder.com/80" alt="" class="person__avatar">
+							<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
+						</cite>
+					</blockquote>
 
-				<blockquote class="feedbacks__item">
-					<div class="feedbacks__text">
-						<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
-						<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
-					</div>
-					<cite class="feedbacks__autor person">
-						<img src="" alt="" class="person__avatar">
-						<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
-					</cite>
-				</blockquote>
+					<blockquote class="feedbacks__item flex__item_4">
+						<div class="feedbacks__text">
+							<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
+							<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
+						</div>
+						<cite class="feedbacks__autor person">
+							<img src="https://via.placeholder.com/80" alt="" class="person__avatar">
+							<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
+						</cite>
+					</blockquote>
+
+					<blockquote class="feedbacks__item flex__item_4">
+						<div class="feedbacks__text">
+							<p>Очень довольна услугами юриста, оказавшего помощь в моем деле с наследством. Документы были оформлены и зарегистрированы очень быстро.</p>
+							<time class="feedbacks__date" datetime="2018-02-12">12.02.2018</time>
+						</div>
+						<cite class="feedbacks__autor person">
+							<img src="https://via.placeholder.com/80" alt="" class="person__avatar">
+							<p class="person__text"><span class="person__name">Тупицын Владимир</span> <span class="person__city">г. Воронеж</span></p>
+						</cite>
+					</blockquote>
+				</div>
 			</div>
 		</div>
 	</section>

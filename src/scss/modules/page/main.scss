@@ -1,0 +1,5 @@
+.page-main__section {
+	&:not(:last-child) {
+		margin-bottom: $bit * 7;
+	}
+}

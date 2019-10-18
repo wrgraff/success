@@ -1,0 +1,48 @@
+.promo {
+	@each $breakpoint, $gap in $flex-gaps {
+	    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			margin-top: -60px - $gap;
+		}
+	}
+}
+
+.promo__text {
+	margin-bottom: 64px;
+	&:first-child {
+		@each $breakpoint, $gap in $flex-gaps {
+			@media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+				margin-top: 60px + 80px - $gap;
+			}
+		}
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
+
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.promo__advantages {
+	align-content: space-around;
+	padding: 24px 0;
+	border-radius: 8px;
+
+	background-color: color(white);
+	box-shadow: 0 0 40px rgba(192, 192, 192, 0.5);
+
+	text-align: center;
+
+	list-style: none;
+}
+
+.promo__advantage {
+	padding: 0 64px;
+	font-size: font-size(small);
+}
+
+.promo__ico {
+	display: block;
+	margin: 0 auto 22px;
+}

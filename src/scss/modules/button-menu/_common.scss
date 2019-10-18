@@ -1,0 +1,43 @@
+.button-menu {
+	display: flex;
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+}
+
+.button-menu__item {
+	flex-basis: 0;
+	flex-grow: 1;
+
+	@each $breakpoint, $gap in $flex-gaps {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			margin: 0 ($gap / 2);
+		}
+	}
+}
+
+.button-menu__link {
+	display: block;
+	min-height: 60px;
+	padding: 16px 20px;
+	border: 2px solid color(primary);
+
+	color: color(black);
+
+	text-align: center;
+	font-weight: 700;
+
+	transition: color 200ms, background-color 200ms;
+
+	&:hover {
+		color: color(medium-gray);
+		background-color: color(light-gray);
+	}
+	&:focus {
+		outline-color: rgba(color(primary), .6);
+		outline-style: solid;
+		outline-width: 2px;
+		outline-offset: -12px;
+	}
+}

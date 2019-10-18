@@ -1,0 +1,30 @@
+$button-colors: (
+    secondary: (
+        bg: color(secondary),
+    ),
+);
+
+.button_color {
+    @each $name, $colors in $button-colors {
+        &_#{$name} {
+            background-color: map-get($colors, bg);
+
+            @if (map-has-key($colors, color)) {
+                color: map-get($colors, color);
+            }
+        }
+
+        &_#{$name}:hover {
+            // Hover color need not changing
+            @if (map-has-key($colors, color)) {
+                color: map-get($colors, color);
+            }
+
+            @if (map-has-key($colors, bg-hover)) {
+                background-color: map-get($colors, bg-hover);
+            } @else {
+                background-color: lighten(map-get($colors, bg), 10%);
+            }
+        }
+    }
+}

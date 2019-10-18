@@ -1,0 +1,18 @@
+.logo {
+	line-height: 1;
+	transition: opacity 200ms;
+
+	&:hover {
+		opacity: .7;
+	}
+	&:focus {
+		outline-color: rgba(color(primary), .6);
+		outline-style: solid;
+		outline-width: 2px;
+		outline-offset: 2px;
+	}
+}
+
+.logo__img {
+	display: block;
+}

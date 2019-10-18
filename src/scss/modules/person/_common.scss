@@ -1,0 +1,30 @@
+.person {
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+}
+
+.person__avatar {
+	width: 80px;
+	height: 80px;
+	margin-right: $bit * 2;
+	border-radius: 50%;
+}
+
+.person__text {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 0;
+}
+
+.person__name {
+	flex-basis: 0;
+	margin-right: auto;
+	color: color(primary);
+	line-height: 1.3;
+}
+
+.person__city {
+	flex-basis: 100%;
+	font-size: 12px;
+}

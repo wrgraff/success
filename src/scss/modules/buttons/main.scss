@@ -1,0 +1,41 @@
+$button-bg: color(primary);
+
+.button {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 10px 26px 12px;
+	border: none;
+	border-radius: 200px;
+
+	color: inherit;
+	background-color: $button-bg;
+	box-shadow: 0 0 0 4px rgba(color(white), 0), 0 0 0 6px rgba(color(primary), 0);
+
+	text-align: center;
+	font-size: 15px;
+	font-weight: font-weight(medium);
+	line-height: 1;
+
+	transition: background-color 200ms, box-shadow 200ms;
+}
+
+.button:hover {
+	color: inherit;
+	background-color: lighten($button-bg, 10%);
+}
+
+.button:active {
+	box-shadow: shadow(1-lvl);
+	box-shadow: shadow(1-lvl, var(--button-shadow-color));
+}
+
+.button:focus {
+	outline: none;
+	box-shadow: 0 0 0 4px color(white), 0 0 0 6px rgba(color(primary), .6);
+}
+
+.button[disabled] {
+	opacity: 0.3;
+	background-color: $button-bg;
+	box-shadow: none;
+}

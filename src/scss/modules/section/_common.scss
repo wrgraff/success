@@ -1,0 +1,26 @@
+.section__heading {
+	margin-left: -$bit;
+	margin-bottom: $bit * 5;
+
+	font-size: 72px;
+	font-weight: 900;
+	line-height: 1.2;
+
+	.section_steps & {
+		color: color(primary);
+	}
+}
+
+.section_offers {
+	padding-top: $bit * 6;
+	background-color: color(secondary);
+}
+
+.section_feedbacks {
+	padding-top: $bit * 2;
+
+	.section_offers + & {
+		margin-top: $bit * -7;
+		background-image: linear-gradient(174.1deg, color(secondary) 230px, color(white) 231px);
+	}
+}

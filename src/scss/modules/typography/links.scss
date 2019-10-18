@@ -1,0 +1,13 @@
+a {
+	color: color(primary);
+	text-decoration: none;
+	transition: color 200ms;
+
+	&:not([class]) {
+		border-bottom: 1px solid;
+
+		&:hover {
+			color: color(secondary);
+		}
+	}
+}

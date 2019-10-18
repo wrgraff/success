@@ -56,8 +56,8 @@
 		</p>
 	</div>
 
-	<nav class="page-header__nav container">
-		<div class="menu">
+	<nav class="page-header__nav{{ ' page-header__nav_titled' if (not activePage) }} container">
+		<div class="page-header__menu menu">
 			{% if not activePage %}
 				<p class="menu__title">Услуги</p>
 			{% endif %}
@@ -68,7 +68,7 @@
 			</ul>
 		</div>
 
-		<ul class="button-menu">
+		<ul class="page-header__button-menu button-menu">
 			<li class="button-menu__item">
 				<a href="#" class="button-menu__link">Формы документов</a>
 			</li>

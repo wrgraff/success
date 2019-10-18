@@ -1,0 +1,61 @@
+.feedbacks {
+	min-height: 437px;
+}
+
+.feedbacks__item {
+	&:not(:first-child) {
+	    position: absolute;
+
+	    width: 1px;
+	    height: 1px;
+	    margin: -1px;
+	    border: 0;
+	    padding: 0;
+
+	    clip: rect(0 0 0 0);
+	    overflow: hidden;
+	}
+}
+
+.feedbacks__img {
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	background-image: url(../img/decor/man.png);
+}
+
+.feedbacks__text {
+	position: relative;
+	margin-bottom: $bit * 4;
+	padding: 20px 36px 28px;
+
+	color: color(dark-gray);
+	background-color: color(200-gray);
+
+	&::after {
+		content: '';
+
+		position: absolute;
+		top: 100%;
+		left: 25px;
+
+		display: block;
+		width: 0;
+		height: 0;
+		border-width: 20px;
+		border-style: solid;
+		border-color: color(200-gray) transparent transparent transparent;
+	}
+
+	p {
+		margin-bottom: 12px;
+	}
+}
+
+.feedbacks__date {
+	font-size: 11px;
+}
+
+.feedbacks__autor {
+	margin-left: 6px;
+	font-style: normal;
+}

@@ -20,7 +20,7 @@
  */
 
 html {
-  line-height: 1.5; /* 1 */
+  line-height: 1.4; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   box-sizing: border-box; /* 3 */
 }
@@ -80,6 +80,14 @@ hr {
 
 /* Text-level semantics
    ========================================================================== */
+
+/**
+ * Removing top-margin in paragraphs
+ */
+
+p {
+	margin-top: 0;
+}
 
 /**
  * Remove the gray background on active links in IE 10.

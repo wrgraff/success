@@ -1,0 +1,80 @@
+.page-header {
+	@each $breakpoint, $gap in $flex-gaps {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			padding-top: $gap;
+			margin-bottom: $gap;
+		}
+	}
+}
+
+.page-header__info {
+	display: flex;
+	justify-content: space-between;
+
+	margin-bottom: 22px;
+}
+
+.page-header__logo {
+	flex-basis: 244px;
+	align-self: flex-start;
+
+	padding: 0 10px;
+}
+
+.page-header__title {
+	padding-top: 26px;
+
+	font-size: font-size(large);
+	font-weight: 300;
+	line-height: 1.2;
+}
+
+.page-header__contacts {
+	flex-basis: 244px;
+	padding-top: 26px;
+	text-align: center;
+}
+
+.page-header__phone {
+	display: inline-block;
+	margin-bottom: 6px;
+	padding: 0 2px;
+	color: color(black);
+	font-weight: 700;
+	font-size: font-size(large);
+	line-height: 1.2;
+
+	&:hover {
+		color: color(secondary);
+	}
+	&:focus {
+		outline-color: rgba(color(primary), .6);
+		outline-style: solid;
+		outline-width: 2px;
+		outline-offset: 1px;
+	}
+}
+
+.page-header__nav_titled {
+	margin-top: 80px;
+}
+
+.page-header__menu {
+	@each $breakpoint, $gap in $flex-gaps {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			margin-bottom: $gap;
+		}
+	}
+}
+
+.page-header__button-menu {
+	position: relative;
+	z-index: 2;
+
+	@each $breakpoint, $gap in $flex-gaps {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			width: calc(#{100% / 12 * 5} + #{$gap / 2});
+			margin-left: $gap / -2;
+		}
+	}
+}

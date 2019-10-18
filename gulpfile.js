@@ -10,6 +10,9 @@ var gulp = require('gulp'),
     include = require("gulp-include"),
 	nunjucks = require('gulp-nunjucks-render'),
 	prettier = require('gulp-prettier'),
+	svgo = require('gulp-svgo'),
+	imagemin = require('gulp-imagemin'),
+	webp = require('gulp-webp'),
     browserSync = require('browser-sync').create();
 
 gulp.task('sass', function () {
@@ -51,6 +54,18 @@ gulp.task('fonts', function() {
 	gulp.src('src/fonts/**/*-cyrillic.*').pipe(gulp.dest('dist/static/fonts'));
 	gulp.src('src/fonts/**/*-slogan.*').pipe(gulp.dest('dist/static/fonts'));
 	return console.log('All needed fonts moved');
+});
+gulp.task('svg', () => {
+    return gulp.src('src/img/**/*')
+        .pipe(svgo())
+        .pipe(gulp.dest('dist/static/img'));
+});
+gulp.task('img', () => {
+	return gulp.src('src/img/**/*')
+		.pipe(imagemin())
+        .pipe(gulp.dest('dist/static/img'))
+        .pipe(webp())
+		.pipe(gulp.dest('dist/static/img'));
 });
 
 gulp.task('default', function () {

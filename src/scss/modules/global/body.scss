@@ -2,4 +2,7 @@ html,
 body {
     color: color(black);
     font-family: $font-family, 'Helvetica', 'Segoe UI', sans-serif;
+	::selection {
+		background-color: rgba(color(secondary), .7);
+	}
 }
