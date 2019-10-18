@@ -403,6 +403,11 @@ a {
     border-bottom: 1px solid; }
     a:not([class]):hover {
       color: #fe6161; }
+    a:not([class]):focus {
+      outline-color: rgba(187, 212, 12, 0.6);
+      outline-style: solid;
+      outline-width: 2px;
+      outline-offset: 2px; }
 
 .flex {
   display: flex;
@@ -5067,6 +5072,7 @@ body {
     outline-offset: -12px; }
 
 .logo {
+  display: block;
   line-height: 1;
   transition: opacity 200ms; }
   .logo:hover {
@@ -5166,6 +5172,11 @@ body {
     color: #fff; }
     .page-footer a:hover {
       color: #fe6161; }
+    .page-footer a:focus {
+      outline-color: rgba(187, 212, 12, 0.6);
+      outline-style: solid;
+      outline-width: 2px;
+      outline-offset: 2px; }
 
 .page-footer__container {
   display: flex;
@@ -5291,11 +5302,13 @@ body {
     animation-duration: 200ms;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards; }
-  .steps__item:hover::after {
-    -webkit-animation-name: fade-forward;
-    animation-name: fade-forward;
-    opacity: 1;
-    transform: scale(1.2); }
+  .steps__item:hover, .steps__item:focus-within {
+    outline: none; }
+    .steps__item:hover::after, .steps__item:focus-within::after {
+      -webkit-animation-name: fade-forward;
+      animation-name: fade-forward;
+      opacity: 1;
+      transform: scale(1.2); }
 
 .steps__text {
   margin-bottom: 0; }
@@ -5310,14 +5323,12 @@ body {
   bottom: -16px;
   min-width: 244px;
   opacity: 0;
-  visibility: hidden;
   transform: translate(-50%, 0);
-  transition: background-color 200ms, opacity 200ms, transform 200ms, visibility 1ms linear 200ms; }
-  .steps__item:hover .steps__button {
+  transition: background-color 200ms, opacity 200ms, transform 200ms; }
+  .steps__item:hover .steps__button,
+  .steps__item:focus-within .steps__button {
     opacity: 1;
-    visibility: visible;
-    transform: translate(-50%, 32px);
-    transition: background-color 200ms, opacity 200ms, transform 200ms; }
+    transform: translate(-50%, 32px); }
 
 @-webkit-keyframes fade-forward {
   0% {
@@ -5379,9 +5390,9 @@ body {
     animation-duration: 200ms;
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards; }
-  .offers__item:hover {
+  .offers__item:hover, .offers__item:focus-within {
     color: #000; }
-    .offers__item:hover::after {
+    .offers__item:hover::after, .offers__item:focus-within::after {
       -webkit-animation-name: fade-forward;
       animation-name: fade-forward;
       opacity: 1;
@@ -5398,13 +5409,11 @@ body {
   bottom: -8px;
   min-width: 244px;
   opacity: 0;
-  visibility: hidden;
-  transition: background-color 200ms, opacity 200ms, transform 200ms, visibility 1ms linear 200ms; }
-  .offers__item:hover .offers__button {
+  transition: background-color 200ms, opacity 200ms, transform 200ms; }
+  .offers__item:hover .offers__button,
+  .offers__item:focus-within .offers__button {
     opacity: 1;
-    visibility: visible;
-    transform: translateY(32px);
-    transition: background-color 200ms, opacity 200ms, transform 200ms; }
+    transform: translateY(32px); }
 
 .person {
   display: flex;

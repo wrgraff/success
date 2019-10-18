@@ -9,5 +9,11 @@ a {
 		&:hover {
 			color: color(secondary);
 		}
+		&:focus {
+			outline-color: rgba(color(primary), .6);
+			outline-style: solid;
+			outline-width: 2px;
+			outline-offset: 2px;
+		}
 	}
 }

@@ -38,7 +38,8 @@
 		animation-fill-mode: forwards;
 	}
 
-	&:hover {
+	&:hover,
+	&:focus-within {
 		color: color(black);
 
 		&::after {
@@ -63,15 +64,12 @@
 
 	min-width: 244px;
 	opacity: 0;
-	visibility: hidden;
+	transition: background-color 200ms, opacity 200ms, transform 200ms;
 
-	transition: background-color 200ms, opacity 200ms, transform 200ms, visibility 1ms linear 200ms;
-
-	.offers__item:hover & {
+	.offers__item:hover &,
+	.offers__item:focus-within & {
 		opacity: 1;
-		visibility: visible;
 
 		transform: translateY($bit * 4);
-		transition: background-color 200ms, opacity 200ms, transform 200ms;
 	}
 }
