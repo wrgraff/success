@@ -1,18 +1,44 @@
-$font-family: 'Roboto';
-@mixin font-face($font-family, $file-path, $font-weight, $font-style) {
-    @font-face {
-        font-family: $font-family;
-        src: local('#{$font-family}'),
-             url("#{$file-path}.woff2") format('woff2'),
-             url("#{$file-path}.woff") format('woff'),
-             url("#{$file-path}.eot") format('eot'),
-             url("#{$file-path}.ttf") format('ttf');
-        font-weight: $font-weight;
-        font-style: $font-style;
-        font-display: swap;
+$font-family: 'Montserrat';
+$unicode-ranges: (
+	latin:
+	'U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD',
+	latin-extended:
+	'U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF',
+	cyrillic:
+	'U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116'
+);
+$range-slogan: 'U+20,U+2E,U+420,U+424,U+430-436,U+438-442,U+445-448,U+44B,U+44C,U+44E,U+44F';
+
+@mixin font-face($font-family, $file-path, $font-weight, $font-style, $range: false) {
+	@if ($range) {
+    	@font-face {
+	        font-family: $font-family;
+	        font-weight: $font-weight;
+	        font-style: $font-style;
+	        font-display: swap;
+	        src: url("#{$file-path}.woff2") format('woff2'),
+	             url("#{$file-path}.woff") format('woff'),
+	             url("#{$file-path}.ttf") format('ttf');
+			unicode-range: $range;
+		}
+	} @else {
+		@each $range, $glyphs in $unicode-ranges {
+	    	@font-face {
+		        font-family: $font-family;
+		        font-weight: $font-weight;
+		        font-style: $font-style;
+		        font-display: swap;
+		        src: url("#{$file-path}-#{$range}.woff2") format('woff2'),
+		             url("#{$file-path}-#{$range}.woff") format('woff'),
+		             url("#{$file-path}-#{$range}.ttf") format('ttf');
+				unicode-range: $glyphs;
+			}
+		}
     }
 }
 
-@include font-face($font-family, '../fonts/roboto/roboto-regular', 400, normal);
-@include font-face($font-family, '../fonts/roboto/roboto-medium', 500, normal);
-@include font-face($font-family, '../fonts/roboto/roboto-bold', 700, normal);
+@include font-face($font-family, '../fonts/montserrat/montserrat-light-slogan', 300, normal, $range-slogan);
+@include font-face($font-family, '../fonts/montserrat/montserrat-light', 300, normal);
+@include font-face($font-family, '../fonts/montserrat/montserrat-regular', 400, normal);
+@include font-face($font-family, '../fonts/montserrat/montserrat-bold', 700, normal);
+@include font-face($font-family, '../fonts/montserrat/montserrat-black', 900, normal);
