@@ -52,10 +52,21 @@
 
 .offers__heading {
 	margin-bottom: $bit * 2;
+	font-weight: 700;
 }
 
 .offers__text {
 	margin-bottom: 0;
+}
+
+.offers__list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li::before {
+		content: '— ';
+	}
 }
 
 .offers__button {

@@ -1,0 +1,50 @@
+.services {
+	padding: 0;
+	list-style: none;
+}
+
+.services__item {
+	position: relative;
+
+	display: flex;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		right: 100%;
+
+		display: block;
+		width: 2px;
+		height: 20px;
+		margin-right: 16px;
+
+		background-color: color(black);
+
+		transform: rotate(45deg);
+	}
+
+	&:nth-child(4n-3)::before {
+		display: none;
+	}
+}
+
+.services__link {
+	flex-grow: 1;
+	padding-right: $bit * 4;
+
+	color: color(black);
+
+	font-weight: 700;
+
+	&:hover {
+		color: color(white);
+	}
+	&:focus {
+		outline-color: rgba(color(white), .6);
+		outline-style: solid;
+		outline-width: 2px;
+		outline-offset: 2px;
+	}
+}

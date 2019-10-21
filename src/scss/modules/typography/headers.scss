@@ -1,10 +1,20 @@
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 ($bit * 3);
-    font-weight: 700;
+    font-weight: 900;
 }
 
-@for $i from 6 through 1 {
+@for $i from 6 through 3 {
     h#{7 - $i} {
         font-size: 8px + (8px * $i / 2);
     }
+}
+
+h1 {
+	margin-bottom: $bit * 6;
+	color: color(primary);
+	font-size: 72px;
+	line-height: 1;
+}
+h2 {
+	font-size: 42px;
 }

@@ -24,3 +24,20 @@
 		background-image: linear-gradient(174.1deg, color(secondary) 230px, color(white) 231px);
 	}
 }
+
+.section_services {
+	padding-top: $bit * 4;
+	padding-bottom: $bit * 4;
+	background-color: color(primary);
+}
+
+.section_advantages {
+	padding-top: $bit * 4;
+	padding-bottom: $bit * 4;
+	background-color: #efefef;
+}
+
+.section_cases {
+	padding-top: $bit * 4;
+	padding-bottom: $bit * 4;
+}

@@ -75,6 +75,19 @@
 		}
 	}
 }
+.menu__item_active {
+	&::before,
+	&::after {
+		background-color: color(primary);
+	}
+
+	&:hover {
+		&::before,
+		&::after {
+			background-color: darken(color(primary), 5%);
+		}
+	}
+}
 
 .menu__link {
 	display: block;
@@ -106,6 +119,9 @@
 
 	&:hover {
 		color: color(medium-gray);
+	}
+	.menu__item_active & {
+		color: color(white);
 	}
 
 	&:focus {

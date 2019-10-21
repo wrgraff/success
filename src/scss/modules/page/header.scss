@@ -55,6 +55,11 @@
 	}
 }
 
+.page-header__nav {
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+}
 .page-header__nav_titled {
 	margin-top: 80px;
 }

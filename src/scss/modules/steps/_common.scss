@@ -58,6 +58,10 @@
 	}
 }
 
+.steps__heading {
+	font-weight: 700;
+}
+
 .steps__text {
 	margin-bottom: 0;
 
@@ -84,22 +88,5 @@
 		opacity: 1;
 
 		transform: translate(-50%, ($bit * 4));
-	}
-}
-
-@keyframes fade-forward {
-	0% {
-		z-index: auto;
-	}
-	100% {
-		z-index: 2;
-	}
-}
-@keyframes fade-backward {
-	0% {
-		z-index: 2;
-	}
-	100% {
-		z-index: auto;
 	}
 }

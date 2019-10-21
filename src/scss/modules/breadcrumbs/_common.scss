@@ -1,0 +1,36 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-size: 12px;
+}
+
+.breadcrumbs__item {
+    position: relative;
+    margin-bottom: $bit;
+    &:not(:last-child) {
+        margin-right: $bit;
+    }
+    white-space: nowrap;
+
+    &:not(:last-child)::after {
+        content: '>';
+		display: inline-block;
+		margin-left: 4px;
+    }
+}
+
+.breadcrumbs__link {
+	color: color(black);
+	text-decoration: underline;
+
+	&:hover {
+		color: color(primary);
+	}
+	&:focus {
+		outline-color: rgba(color(primary), .6);
+		outline-style: solid;
+		outline-width: 2px;
+		outline-offset: 2px;
+	}
+}
