@@ -1,13 +1,22 @@
 .section__heading {
-	margin-left: -$bit;
 	margin-bottom: $bit * 5;
 
-	font-size: 72px;
 	font-weight: 900;
 	line-height: 1.2;
 
 	.section_steps & {
 		color: color(primary);
+	}
+
+	@media (min-width: map-get($breakpoints, small)) {
+        font-size: 48px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+        font-size: 64px;
+	}
+	@media (min-width: map-get($breakpoints, large)) {
+		margin-left: -$bit;
+		font-size: 72px;
 	}
 }
 

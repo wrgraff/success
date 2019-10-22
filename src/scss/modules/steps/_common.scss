@@ -7,8 +7,17 @@
 .steps__item {
 	position: relative;
 	counter-increment: steps;
+
+	display: flex;
+	flex-direction: column;
 	padding: $bit * 4;
 	background-color: color(primary);
+
+	@media (max-width: map-get($breakpoints, small)) {
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
 
 	> * {
 		position: relative;
@@ -24,36 +33,42 @@
 		display: block;
 		margin-bottom: 44px;
 
-		font-size: 200px;
+		font-size: 100px;
 		font-weight: 900;
 		line-height: .6;
+
+		@media (min-width: map-get($breakpoints, medium)) {
+			font-size: 200px;
+		}
 	}
 
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: $bit * -5;
-		left: 0;
-
-		background-color: color(white);
-		box-shadow: 0 0 40px rgba(163, 163, 163, 0.5);
-		opacity: 0;
-
-		transition: opacity 200ms, transform 200ms;
-		animation-name: fade-backward;
-		animation-duration: 200ms;
-		animation-fill-mode: forwards;
-	}
-
-	&:hover,
-	&:focus-within {
-		outline: none;
+	@media (min-width: map-get($breakpoints, medium)) {
 		&::after {
-			animation-name: fade-forward;
-			opacity: 1;
-			transform: scale(1.2);
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: $bit * -5;
+			left: 0;
+
+			background-color: color(white);
+			box-shadow: 0 0 40px rgba(163, 163, 163, 0.5);
+			opacity: 0;
+
+			transition: opacity 200ms, transform 200ms;
+			animation-name: fade-backward;
+			animation-duration: 200ms;
+			animation-fill-mode: forwards;
+		}
+
+		&:hover,
+		&:focus-within {
+			outline: none;
+			&::after {
+				animation-name: fade-forward;
+				opacity: 1;
+				transform: scale(1.2);
+			}
 		}
 	}
 }
@@ -63,7 +78,9 @@
 }
 
 .steps__text {
-	margin-bottom: 0;
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-bottom: 0;
+	}
 
 	a {
 		color: color(black);
@@ -73,20 +90,24 @@
 }
 
 .steps__button {
-	position: absolute;
-	left: 50%;
-	bottom: $bit * -2;
+	margin-top: auto;
 
-	min-width: 244px;
-	opacity: 0;
+	@media (min-width: map-get($breakpoints, medium)) {
+		position: absolute;
+		left: 50%;
+		bottom: $bit * -2;
 
-	transform: translate(-50%, 0);
-	transition: background-color 200ms, opacity 200ms, transform 200ms;
+		min-width: 244px;
+		opacity: 0;
 
-	.steps__item:hover &,
-	.steps__item:focus-within & {
-		opacity: 1;
+		transform: translate(-50%, 0);
+		transition: background-color 200ms, opacity 200ms, transform 200ms;
 
-		transform: translate(-50%, ($bit * 4));
+		.steps__item:hover &,
+		.steps__item:focus-within & {
+			opacity: 1;
+
+			transform: translate(-50%, ($bit * 4));
+		}
 	}
 }

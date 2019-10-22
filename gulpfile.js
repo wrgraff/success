@@ -22,6 +22,7 @@ gulp.task('sass', function () {
             cascade: false
         }))
         .pipe(gulp.dest('dist/static/css'))
+		.pipe(browserSync.stream())
         .pipe(clone())
         .pipe(cssmin())
         .pipe(rename({ suffix: '.min' }))
@@ -35,8 +36,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest('dist/static/js'))
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist/static/js'))
-        .pipe(browserSync.stream());
+        .pipe(gulp.dest('dist/static/js'));
 });
 gulp.task('njk', function() {
 	return gulp.src('src/njk/pages/**/*.njk')
@@ -44,8 +44,7 @@ gulp.task('njk', function() {
             path: ['src/njk/layouts']
         }))
         .pipe(prettier({ proseWrap: 'never', printWidth: 800, tabWidth: 4, useTabs: true }))
-        .pipe(gulp.dest('dist'))
-		.pipe(browserSync.stream());
+        .pipe(gulp.dest('dist'));
 });
 
 gulp.task('fonts', function() {
@@ -72,7 +71,7 @@ gulp.task('default', function () {
 	browserSync.init({
         server: "./dist"
     });
-    gulp.watch('src/scss/**/*.scss', gulp.series('sass')).on('change', browserSync.reload);
+    gulp.watch('src/scss/**/*.scss', gulp.series('sass'));
 	gulp.watch('src/njk/**/*.njk', gulp.series('njk')).on('change', browserSync.reload);
     gulp.watch('src/js/**/*.js', gulp.series('js')).on('change', browserSync.reload);
 });

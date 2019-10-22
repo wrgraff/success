@@ -1,7 +1,18 @@
-$container-padding: 40px;
+$container-paddings: (
+	small: 20px,
+	medium: 24px,
+	large: 40px,
+);
 
 .container {
-	max-width: 1252px + ($container-padding * 2);
+	max-width: 1252px + (map-get($container-paddings, large) * 2);
 	margin: 0 auto;
-	padding: 0 $container-padding;
+	padding: 0 10px;
+
+	@each $breakpoint, $padding in $container-paddings {
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+			padding-left: $padding;
+			padding-right: $padding;
+		}
+	}
 }

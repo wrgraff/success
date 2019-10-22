@@ -9,24 +9,48 @@
 
 .page-header__info {
 	display: flex;
-	justify-content: space-between;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
 
 	margin-bottom: 22px;
+
+	@media (min-width: map-get($breakpoints, small)) {
+		justify-content: space-between;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		flex-wrap: nowrap;
+		align-items: flex-start;
+	}
 }
 
 .page-header__logo {
 	flex-basis: 244px;
-	align-self: flex-start;
-
 	padding: 0 10px;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		align-self: flex-start;
+	}
 }
 
 .page-header__title {
+	order: 2;
+	flex-grow: 2;
+	padding: 0 16px;
 	padding-top: 26px;
 
-	font-size: font-size(large);
+	text-align: center;
 	font-weight: 300;
 	line-height: 1.2;
+
+	@media (min-width: map-get($breakpoints, small)) {
+		font-size: font-size(large);
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		order: 0;
+		flex-grow: 0;
+		text-align: left;
+	}
 }
 
 .page-header__contacts {
@@ -56,30 +80,127 @@
 }
 
 .page-header__nav {
+	position: relative;
+
 	&:not(:last-child) {
 		margin-bottom: 20px;
 	}
+
+	@media (max-width: map-get($breakpoints, medium)) {
+		display: flex;
+		flex-wrap: wrap;
+	}
 }
 .page-header__nav_titled {
-	margin-top: 80px;
+	margin-top: 20px;
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-top: 80px;
+	}
+}
+
+.page-header__menu-toggler {
+	position: relative;
+
+	flex-basis: 100%;
+	flex-grow: 1;
+	min-height: 60px;
+	padding: 16px 20px 16px 48px;
+
+	color: color(black);
+	background-color: color(white);
+	border: 2px solid color(primary);
+
+	text-align: center;
+	font-weight: 700;
+
+	transition: color 200ms, background-color 200ms;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 20px;
+
+		width: 2px;
+		height: 20px;
+		margin-top: -10px;
+
+		background-color: color(primary);
+
+		transform: rotate(45deg);
+	}
+	&::after {
+		left: 28px;
+	}
+
+	&:hover {
+		color: color(medium-gray);
+		background-color: color(light-gray);
+	}
+	&:focus {
+		outline-color: rgba(color(primary), .6);
+		outline-style: solid;
+		outline-width: 2px;
+		outline-offset: -12px;
+	}
+
+	@media (min-width: map-get($breakpoints, small)) {
+		max-width: calc(30% - 16px);
+		margin-right: 16px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		display: none;
+	}
 }
 
 .page-header__menu {
+	background-color: color(white);
 	@each $breakpoint, $gap in $flex-gaps {
         @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
 			margin-bottom: $gap;
 		}
 	}
+	@media (max-width: map-get($breakpoints, medium)) {
+		order: 2;
+		flex-basis: 100%;
+		margin-top: 16px;
+	}
+	@media (max-width: map-get($breakpoints, small)) {
+		order: 0;
+	}
+}
+.page-header__menu_closed {
+	display: none;
+}
+.page-header__menu_opened {
+	position: absolute;
+	top: 58px;
+	right: 10px;
+	left: 10px;
+	z-index: 10;
+	margin-top: 0;
 }
 
-.page-header__button-menu {
+.page-header__menu-info {
 	position: relative;
 	z-index: 2;
+	flex-basis: 70%;
+	flex-grow: 1;
 
-	@each $breakpoint, $gap in $flex-gaps {
-        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-			width: calc(#{100% / 12 * 5} + #{$gap / 2});
-			margin-left: $gap / -2;
-		}
+	@media (min-width: map-get($breakpoints, medium)) {
+		width: calc(#{100% / 12 * 5} + #{map-get($flex-gaps, zero) / 2});
+		margin-left: map-get($flex-gaps, zero) / -2;
 	}
+	@media (min-width: map-get($breakpoints, large)) {
+		width: calc(#{100% / 12 * 5} + #{map-get($flex-gaps, large) / 2});
+		margin-left: map-get($flex-gaps, large) / -2;
+	}
+
+	// @each $breakpoint, $gap in $flex-gaps {
+    //     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+	// 		width: calc(#{100% / 12 * 5} + #{$gap / 2});
+	// 		margin-left: $gap / -2;
+	// 	}
+	// }
 }

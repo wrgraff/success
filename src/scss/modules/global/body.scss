@@ -2,6 +2,8 @@ html,
 body {
     color: color(black);
     font-family: $font-family, 'Helvetica', 'Segoe UI', sans-serif;
+	min-width: 320px;
+
 	::selection {
 		background-color: rgba(color(secondary), .7);
 	}

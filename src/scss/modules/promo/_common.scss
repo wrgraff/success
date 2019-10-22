@@ -1,27 +1,34 @@
 .promo {
-	@each $breakpoint, $gap in $flex-gaps {
-	    @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-			margin-top: -60px - $gap;
-		}
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-top: -60px - map-get($flex-gaps, zero);
+	}
+	@media (min-width: map-get($breakpoints, large)) {
+		margin-top: -60px - map-get($flex-gaps, large);
 	}
 }
 
 .promo__text {
-	margin-bottom: 64px;
-	&:first-child {
-		@each $breakpoint, $gap in $flex-gaps {
-			@media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-				margin-top: 60px + 80px - $gap;
-			}
-		}
-	}
-	&:last-child {
-		margin-bottom: 0;
-	}
-
-	font-size: 42px;
+	font-size: 24px;
 	font-weight: 700;
 	line-height: 1.2;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-bottom: 64px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		font-size: 42px;
+	}
+
+	&:first-child {
+		@media (min-width: map-get($breakpoints, medium)) {
+			margin-top: 60px + 80px - map-get($flex-gaps, zero);
+		}
+		@media (min-width: map-get($breakpoints, large)) {
+			margin-top: 60px + 80px - map-get($flex-gaps, large);
+		}
+	}
 }
 
 .promo__advantages {
@@ -38,6 +45,7 @@
 }
 
 .promo__advantage {
+	margin: 16px 0;
 	padding: 0 64px;
 	font-size: font-size(small);
 }

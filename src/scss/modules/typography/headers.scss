@@ -5,16 +5,40 @@ h1, h2, h3, h4, h5, h6 {
 
 @for $i from 6 through 3 {
     h#{7 - $i} {
-        font-size: 8px + (8px * $i / 2);
-    }
+        font-size: 4px + (6px * $i / 2);
+
+		@media (min-width: map-get($breakpoints, small)) {
+	        font-size: 6px + (7px * $i / 2);
+		}
+		@media (min-width: map-get($breakpoints, medium)) {
+	        font-size: 8px + (8px * $i / 2);
+		}
+	}
 }
 
 h1 {
 	margin-bottom: $bit * 6;
 	color: color(primary);
-	font-size: 72px;
+	font-size: 36px;
 	line-height: 1;
+
+	@media (min-width: map-get($breakpoints, small)) {
+		font-size: 44px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 72px;
+	}
 }
 h2 {
-	font-size: 42px;
+	font-size: 30px;
+
+	@media (min-width: map-get($breakpoints, small)) {
+        font-size: 34px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+        font-size: 38px;
+	}
+	@media (min-width: map-get($breakpoints, large)) {
+        font-size: 42px;
+	}
 }
