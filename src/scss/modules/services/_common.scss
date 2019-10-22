@@ -7,8 +7,21 @@
 	position: relative;
 
 	display: flex;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 16px;
+	margin-bottom: 16px;
+
+	@media (min-width: map-get($breakpoints, small)) {
+		margin-top: 24px;
+		margin-bottom: 24px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-top: 32px;
+		margin-bottom: 32px;
+	}
+	@media (min-width: map-get($breakpoints, large)) {
+		margin-top: 50px;
+		margin-bottom: 50px;
+	}
 
 	&::before {
 		content: '';
@@ -25,8 +38,23 @@
 		transform: rotate(45deg);
 	}
 
-	&:nth-child(4n-3)::before {
-		display: none;
+	@media (max-width: map-get($breakpoints, small)) {
+		margin-left: 40px;
+	}
+	@media (min-width: map-get($breakpoints, small)) and (max-width: map-get($breakpoints, medium)) {
+		&:nth-child(2n-1)::before {
+			display: none;
+		}
+	}
+	@media (min-width: map-get($breakpoints, medium)) and (max-width: map-get($breakpoints, large)) {
+		&:nth-child(3n-2)::before {
+			display: none;
+		}
+	}
+	@media (min-width: map-get($breakpoints, large)) {
+		&:nth-child(4n-3)::before {
+			display: none;
+		}
 	}
 }
 

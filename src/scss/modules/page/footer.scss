@@ -44,12 +44,12 @@
 	flex-grow: 1;
 	max-width: 392px;
 	margin-bottom: 32px;
-	margin-right: 16px;
 	text-align: center;
 
 	@media (min-width: map-get($breakpoints, small)) {
 		flex-basis: 0;
 		margin-bottom: 0;
+		margin-right: 16px;
 		text-align: left;
 	}
 }
