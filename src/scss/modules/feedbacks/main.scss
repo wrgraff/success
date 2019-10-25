@@ -1,8 +1,10 @@
 .feedbacks {
 	min-height: 437px;
 
-	.flex__item {
-		margin-right: auto;
+	@media (min-width: map-get($breakpoints, medium)) {
+		.flex__item {
+			margin-right: auto;
+		}
 	}
 }
 

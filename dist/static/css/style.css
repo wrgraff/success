@@ -6712,8 +6712,9 @@ body {
 
 .feedbacks {
   min-height: 437px; }
-  .feedbacks .flex__item {
-    margin-right: auto; }
+  @media (min-width: 960px) {
+    .feedbacks .flex__item {
+      margin-right: auto; } }
 
 .feedbacks__img {
   display: none;
@@ -6762,6 +6763,55 @@ body {
 .feedbacks__autor {
   margin-left: 6px;
   font-style: normal; }
+
+.feedbacks .tns-outer {
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+
+.feedbacks .tns-controls {
+  order: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  transition: box-shadow 200ms; }
+  .feedbacks .tns-controls:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(187, 212, 12, 0.6); }
+  .feedbacks .tns-controls button {
+    display: block;
+    width: 32px;
+    height: 42px;
+    margin: 8px 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(../img/ico/arrow-right.svg);
+    border: none;
+    transition: -webkit-filter 200ms;
+    transition: filter 200ms;
+    transition: filter 200ms, -webkit-filter 200ms; }
+    .feedbacks .tns-controls button:first-child {
+      transform: rotate(180deg); }
+    .feedbacks .tns-controls button:hover {
+      -webkit-filter: brightness(0.2);
+      filter: brightness(0.2); }
+  @media (min-width: 600px) {
+    .feedbacks .tns-controls {
+      position: absolute;
+      top: -4px;
+      right: -84px;
+      bottom: -4px;
+      left: -84px;
+      justify-content: space-between;
+      margin-top: 0; }
+      .feedbacks .tns-controls button {
+        margin: 0; } }
+
+.feedbacks .tns-slider {
+  display: flex;
+  align-items: center; }
 
 .services {
   padding: 0;

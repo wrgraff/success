@@ -5,6 +5,7 @@ if (feedbacksList) {
 	  container: feedbacksList,
 	  items: 1,
 	  nav: false,
-	  controlsText: ["<span class='visually-hidden'>Предыдущий отзыв<span class='visually-hidden'>", "<span class='visually-hidden'>Следующий отзыв</span>"]
+	  controlsText: ["<span class='visually-hidden'>Предыдущий отзыв<span class='visually-hidden'>", "<span class='visually-hidden'>Следующий отзыв</span>"],
+	  gutter: 16
 	});
 };
