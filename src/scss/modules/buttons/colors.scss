@@ -2,6 +2,10 @@ $button-colors: (
     secondary: (
         bg: color(secondary),
     ),
+	gray: (
+        bg: color(light-gray),
+        bg-hover: darken(color(light-gray), 15%),
+    ),
 );
 
 .button_color {

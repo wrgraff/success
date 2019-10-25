@@ -1,25 +1,3 @@
-// Site utils
-
-// Site apps
-let menuToggler = document.querySelector('.page-header__menu-toggler'),
-	menu = document.querySelector('.page-header__menu');
-
-if (menuToggler && menu) {
-	menuTogglerListener();
-};
-
-function menuTogglerListener() {
-	menu.classList.add('page-header__menu_closed');
-	menuToggler.addEventListener('click', () => {
-		menu.classList.toggle('page-header__menu_closed');
-		menu.classList.toggle('page-header__menu_opened');
-
-		menuToggler.classList.toggle('page-header__menu-toggler_active');
-	});
-};
-
-
-// Vendor
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -378,22 +356,3 @@ function menuTogglerListener() {
   return MicroModal;
 
 })));
-
-const microModalLinks = document.querySelectorAll('a[data-modal]');
-microModalLinks.forEach((link) => {
-    link.addEventListener('click', (evt) => {
-		if (document.querySelector('#' + link.dataset.modal)) {
-			evt.preventDefault();
-			MicroModal.show(link.dataset.modal);
-		}
-	});
-});
-
-const microModalCloses = document.querySelectorAll('[data-modal-close]');
-microModalCloses.forEach((button) => {
-    button.addEventListener('click', () => {
-		MicroModal.close(button.closest('.modal').getAttribute('id'));
-	});
-});
-
-

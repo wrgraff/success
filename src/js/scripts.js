@@ -1,4 +1,7 @@
 // Site utils
-//=require utils/addElement.js
 
 // Site apps
+//=require app/menu.js
+
+// Vendor
+//=require vendor/micromodal/common.js

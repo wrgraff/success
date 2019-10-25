@@ -54,7 +54,7 @@
 
 					<p class="page-header__contacts">
 						<a href="tel:+78006007448" class="page-header__phone">8 (800) 600-74-48</a>
-						<a href="/get-cosultation/" class="button">Получить консультацию</a>
+						<a href="/get-cosultation/" class="button" data-modal="getConsultation">Получить консультацию</a>
 					</p>
 				</div>
 
@@ -207,7 +207,40 @@
 			</footer>
 		</div>
 
+		<div class="modal" id="getConsultation" aria-hidden="true">
+			<section class="modal__overlay" tabindex="-1">
+				<div class="modal__overlay-close" data-modal-close></div>
+				<form action="#" class="modal__container" role="dialog" aria-modal="true" aria-labelledby="getConsultationTitle">
+					<header class="modal__header">
+						<h2 class="modal__title" id="getConsultationTitle">Получить консультацию</h2>
+					</header>
+
+					<div class="modal__body">
+						<label class="input">
+							<input type="text" name="" value="" class="input__field" data-validate-pattern="email" />
+							<span class="input__text">Текстовое поле</span>
+							<span class="input__helper">Валидация на электропочту для прикола</span>
+						</label>
+
+						<label class="input">
+							<input type="text" name="" value="" required class="input__field" />
+							<span class="input__text">Другое текстовое поле</span>
+							<span class="input__helper">Обязательное поле</span>
+						</label>
+					</div>
+
+					<footer class="modal__footer">
+						<div class="flex flex_justify_end flex_gap_half">
+							<button type="button" class="flex__item button button_color_gray" data-modal-close>Отменить</button>
+							<button type="submit" class="flex__item button">Отправить</button>
+						</div>
+					</footer>
+				</form>
+			</section>
+		</div>
+
 		<!-- Scripts -->
+		<script src="/static/js/scripts.js"></script>
 	</body>
 	<!-- Developed by Artur Trifonov frontend-design.ru -->
 </html>
