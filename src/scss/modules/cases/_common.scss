@@ -12,40 +12,42 @@
 	padding: 28px;
 	border: 2px solid color(primary);
 
-	@media (min-width: map-get($breakpoints, medium)) {
-		margin-bottom: 0;
-	}
-
 	> * {
 		position: relative;
+	}
+	&:hover > * {
 		z-index: 3;
 	}
 
-	&::after {
-		content: '';
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-
-		background-color: color(primary);
-		opacity: 0;
-
-		transition: opacity 200ms, transform 200ms;
-		animation-name: fade-backward;
-		animation-duration: 200ms;
-		animation-fill-mode: forwards;
-	}
-
-	&:hover,
-	&:focus-within {
-		color: color(white);
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-bottom: 0;
 
 		&::after {
-			animation-name: fade-forward;
-			opacity: 1;
-			transform: scale(1.2);
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			background-color: color(primary);
+			opacity: 0;
+
+			transition: opacity 200ms, transform 200ms;
+			animation-name: fade-backward;
+			animation-duration: 200ms;
+			animation-fill-mode: forwards;
+		}
+
+		&:hover,
+		&:focus-within {
+			color: color(white);
+
+			&::after {
+				animation-name: fade-forward;
+				opacity: 1;
+				transform: scale(1.2);
+			}
 		}
 	}
 }
@@ -64,9 +66,11 @@
 		font-size: 32px;
 	}
 
-	.cases__item:hover &,
-	.cases__item:focus-within & {
-		color: color(white);
+	@media (min-width: map-get($breakpoints, medium)) {
+		.cases__item:hover &,
+		.cases__item:focus-within & {
+			color: color(white);
+		}
 	}
 }
 

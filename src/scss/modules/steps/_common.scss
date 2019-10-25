@@ -21,6 +21,8 @@
 
 	> * {
 		position: relative;
+	}
+	&:hover > * {
 		z-index: 3;
 	}
 
