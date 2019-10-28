@@ -1,0 +1,35 @@
+$field-height: 50px;
+
+::placeholder {
+    color: color(black);
+	font-size: font-size(small);
+	font-weight: 400;
+}
+
+.field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.field__error {
+	position: absolute;
+	left: 0;
+	top: 100%;
+    padding: ($bit / 2) $bit;
+    color: color(white);
+    background-color: color(secondary);
+    font-size: font-size(small);
+    opacity: 0;
+	transform-origin: 0 100%;
+	transform: translateY($bit * -3) scale(.8);
+	transition: transform 250ms, opacity 250ms;
+
+    .field__input_status_invalid ~ & {
+        opacity: 1;
+		transform: translateY(0) scale(1);
+    }
+}
+
+@import "inputs";
+@import "selects";

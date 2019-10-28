@@ -16,6 +16,8 @@ $button-bg: color(primary);
 	font-weight: font-weight(medium);
 	line-height: 1;
 
+	cursor: pointer;
+
 	transition: background-color 200ms, box-shadow 200ms;
 }
 

@@ -1,0 +1,29 @@
+.field__select {
+	position: relative;
+	z-index: 2;
+	display: block;
+    width: 100%;
+	height: $field-height;
+    padding: $bit ($bit * 2 - 2px);
+    background-color: color(white);
+    background-position: 100% 50%;
+    background-position: calc(100% - #{$bit}) 50%;
+    background-repeat: no-repeat;
+	background-image: url(../img/ico/unfold_more-24px.svg);
+    border: 2px solid;
+    border-radius: $radius;
+    font-size: font-size(medium);
+    line-height: 1;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+			appearance: none;
+    transition: border-color 250ms, box-shadow 250ms;
+
+    &:hover {
+    }
+    &:focus {
+    }
+    &:invalid:not(:focus) {
+        box-shadow: none;
+    }
+}

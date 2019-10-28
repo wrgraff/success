@@ -1,0 +1,25 @@
+.field__input {
+	position: relative;
+	z-index: 2;
+    width: 100%;
+	height: $field-height;
+    padding: $bit ($bit * 3 - 1px);
+	caret-color: color(secondary);
+    background-color: color(white);
+    border: 1px solid color(black);
+    font-size: font-size(small);
+	font-weight: 700;
+    line-height: 1;
+    transition: border-color 250ms, box-shadow 250ms;
+
+    &:hover {
+		border-color: color(secondary);
+    }
+    &:focus {
+		border-color: color(white);
+		box-shadow: 0 0 40px color(primary);
+    }
+    &:invalid:not(:focus) {
+        box-shadow: none;
+    }
+}

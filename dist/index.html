@@ -174,6 +174,29 @@
 					</div>
 				</section>
 
+				<section class="page-main__section section section_form">
+					<div class="container">
+						<h2>Остались вопросы?</h2>
+
+						<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+							<div class="flex__item">
+								<label class="form__item field">
+									<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+									<p class="visually-hidden">Телефон</p>
+								</label>
+							</div>
+
+							<div class="flex__item">
+								<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+							</div>
+
+							<div class="flex__item">
+								<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+							</div>
+						</form>
+					</div>
+				</section>
+
 				<section class="page-main__section section section_offers">
 					<div class="container">
 						<h2 class="section__heading">Популярные предложения Компании</h2>
@@ -312,32 +335,27 @@
 		<div class="modal" id="getConsultation" aria-hidden="true">
 			<section class="modal__overlay" tabindex="-1">
 				<div class="modal__overlay-close" data-modal-close></div>
-				<form action="#" class="modal__container" role="dialog" aria-modal="true" aria-labelledby="getConsultationTitle">
+				<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="getConsultationTitle">
 					<header class="modal__header">
-						<h2 class="modal__title" id="getConsultationTitle">Получить консультацию</h2>
+						<h2 class="visually-hidden" id="getConsultationTitle">Получить консультацию</h2>
+						<p class="modal__title">Получение качественной юридической помощи</p>
 					</header>
 
 					<div class="modal__body">
-						<label class="input">
-							<input type="text" name="" value="" class="input__field" data-validate-pattern="email" />
-							<span class="input__text">Текстовое поле</span>
-							<span class="input__helper">Валидация на электропочту для прикола</span>
-						</label>
+						<form action="#" class="modal__form form">
+							<label class="form__item field">
+								<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+								<p class="visually-hidden">Телефон</p>
+							</label>
 
-						<label class="input">
-							<input type="text" name="" value="" required class="input__field" />
-							<span class="input__text">Другое текстовое поле</span>
-							<span class="input__helper">Обязательное поле</span>
-						</label>
+							<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+
+							<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+						</form>
 					</div>
 
-					<footer class="modal__footer">
-						<div class="flex flex_justify_end flex_gap_half">
-							<button type="button" class="flex__item button button_color_gray" data-modal-close>Отменить</button>
-							<button type="submit" class="flex__item button">Отправить</button>
-						</div>
-					</footer>
-				</form>
+					<button class="modal__close" data-modal-close><span class="visually-hidden">Закрыть</span></button>
+				</div>
 			</section>
 		</div>
 

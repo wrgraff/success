@@ -1,0 +1,29 @@
+.form__item {
+	&:not(:last-child) {
+		margin-bottom: 20px;
+	}
+}
+
+.form__comment {
+	margin-bottom: 0;
+	font-size: font-size(small);
+
+	a {
+		color: color(black);
+	}
+}
+
+.form__button {
+	width: 100%;
+	min-height: $field-height;
+
+	color: color(white);
+	border-radius: 3px;
+
+	font-size: font-size(large);
+	font-weight: 700;
+
+	&:hover {
+		color: color(white);
+	}
+}
