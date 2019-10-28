@@ -21,8 +21,11 @@
 	> * {
 		position: relative;
 	}
-	&:hover > * {
-		z-index: 3;
+	&:hover,
+	&:focus-within {
+		& > * {
+			z-index: 3;
+		}
 	}
 
 	@media (min-width: map-get($breakpoints, medium)) {
