@@ -14,7 +14,7 @@
 
 	list-style: none;
 
-	@media (min-width: map-get($breakpoints, medium)) {
+	@media (min-width: map-get($breakpoints, small)) {
 		flex-direction: row;
 	}
 }
@@ -32,7 +32,7 @@
 	font-weight: 900;
 	line-height: 1;
 
-	@media (min-width: map-get($breakpoints, medium)) {
+	@media (min-width: map-get($breakpoints, small)) {
 		display: inline-block;
 	}
 }
@@ -45,7 +45,7 @@
 
 	text-align: center;
 
-	@media (min-width: map-get($breakpoints, medium)) {
+	@media (min-width: map-get($breakpoints, small)) {
 		&::before {
 			content: '';
 
@@ -91,7 +91,7 @@
 .menu__item_active {
 	background-color: color(primary);
 
-	@media (min-width: map-get($breakpoints, medium)) {
+	@media (min-width: map-get($breakpoints, small)) {
 		background-color: transparent;
 	}
 
@@ -121,7 +121,7 @@
 
 	transition: color 200ms;
 
-	@media (min-width: map-get($breakpoints, medium)) {
+	@media (min-width: map-get($breakpoints, small)) {
 		.menu__item:not(:last-child) & {
 			&::after {
 				content: '';

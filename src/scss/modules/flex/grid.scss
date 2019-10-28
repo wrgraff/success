@@ -15,7 +15,7 @@ $flex-columns-breakpoints: $breakpoints;
             --flex-gap: #{$gap};
 
             &.flex_gap_half {
-                --flex-gap: #{$gap / 2};
+                --flex-gap: #{$gap * .714};
             }
         }
     }

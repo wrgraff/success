@@ -81,17 +81,21 @@
 
 .page-header__nav {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 
 	&:not(:last-child) {
 		margin-bottom: 20px;
 	}
 
-	@media (max-width: map-get($breakpoints, medium)) {
-		display: flex;
+	@media (min-width: map-get($breakpoints, small)) {
+		flex-direction: row;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
 		flex-wrap: wrap;
 	}
 }
-.page-header__nav_titled {
+.page-header__nav_main {
 	margin-top: 20px;
 	@media (min-width: map-get($breakpoints, medium)) {
 		margin-top: 80px;
@@ -104,7 +108,6 @@
 	flex-basis: 100%;
 	flex-grow: 1;
 	min-height: 60px;
-	margin-bottom: 16px;
 	padding: 16px 20px 16px 48px;
 
 	color: color(black);
@@ -148,11 +151,6 @@
 	}
 
 	@media (min-width: map-get($breakpoints, small)) {
-		max-width: calc(30% - 16px);
-		margin-right: 16px;
-		margin-bottom: 0;
-	}
-	@media (min-width: map-get($breakpoints, medium)) {
 		display: none;
 	}
 }
@@ -168,12 +166,10 @@
 }
 
 .page-header__menu {
+	flex-grow: 1;
+
 	background-color: color(white);
-	@each $breakpoint, $gap in $flex-gaps {
-        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-			margin-bottom: $gap;
-		}
-	}
+
 	@media (max-width: map-get($breakpoints, medium)) {
 		order: 2;
 		flex-basis: 100%;
@@ -184,7 +180,7 @@
 		margin-top: 0;
 	}
 }
-@media (max-width: map-get($breakpoints, medium)) {
+@media (max-width: map-get($breakpoints, small)) {
 	.page-header__menu_closed {
 		position: absolute;
 		top: 58px;
@@ -219,25 +215,16 @@
 	}
 }
 
-.page-header__menu-info {
+.page-header__info {
 	position: relative;
 	z-index: 2;
-	flex-basis: 70%;
 	flex-grow: 1;
 
-	@media (min-width: map-get($breakpoints, medium)) {
-		width: calc(#{100% / 12 * 5} + #{map-get($flex-gaps, zero) / 2});
-		margin-left: map-get($flex-gaps, zero) / -2;
+	.page-header__nav_main & {
+		@media (min-width: map-get($breakpoints, medium)) {
+			flex-wrap: wrap;
+			flex-grow: 0;
+			width: 42%;
+		}
 	}
-	@media (min-width: map-get($breakpoints, large)) {
-		width: calc(#{100% / 12 * 5} + #{map-get($flex-gaps, large) / 2});
-		margin-left: map-get($flex-gaps, large) / -2;
-	}
-
-	// @each $breakpoint, $gap in $flex-gaps {
-    //     @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
-	// 		width: calc(#{100% / 12 * 5} + #{$gap / 2});
-	// 		margin-left: $gap / -2;
-	// 	}
-	// }
 }

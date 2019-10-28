@@ -1,10 +1,5 @@
 .promo {
-	@media (min-width: map-get($breakpoints, medium)) {
-		margin-top: -60px - map-get($flex-gaps, zero);
-	}
-	@media (min-width: map-get($breakpoints, large)) {
-		margin-top: -60px - map-get($flex-gaps, large);
-	}
+
 }
 
 .promo__text {
@@ -12,6 +7,9 @@
 	font-weight: 700;
 	line-height: 1.2;
 
+	@media (min-width: map-get($breakpoints, small)) {
+		font-size: 32px;
+	}
 	@media (min-width: map-get($breakpoints, medium)) {
 		margin-bottom: 64px;
 		&:last-child {
