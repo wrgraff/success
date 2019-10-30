@@ -1,0 +1,95 @@
+.contacts {
+	position: relative;
+}
+
+.contacts__details {
+	margin-bottom: 32px;
+
+	@media (min-width: map-get($breakpoints, small)) {
+		display: flex;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		width: 380px;
+		flex-direction: column;
+	}
+}
+
+.contacts__map {
+	display: flex;
+	height: 390px;
+
+	img {
+		object-fit: cover;
+	}
+
+	&_loaded img {
+		display: none;
+	}
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		height: auto;
+	}
+}
+
+.contacts__address,
+.contacts__phones {
+	flex-basis: 50%;
+	margin: 0;
+	padding: $bit * 4;
+
+	font-size: font-size(large);
+	font-weight: 700;
+
+	&::before {
+		content: '';
+
+		display: block;
+		width: 60px;
+		height: 60px;
+		margin-bottom: $bit * 2;
+
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+	}
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		position: relative;
+		z-index: 2;
+
+		padding: 16px 40px 32px;
+		font-size: 24px;
+	}
+}
+
+.contacts__address {
+	background-color: rgba(color(primary), .9);
+
+	&::before {
+		background-image: url(../img/ico/address.svg);
+	}
+}
+
+.contacts__phones {
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(color(secondary), .9);
+
+	&::before {
+		background-image: url(../img/ico/mobile.svg);
+	}
+
+	a {
+		color: color(black);
+		border-bottom: none;
+
+		&:hover {
+			color: color(white);
+		}
+	}
+}

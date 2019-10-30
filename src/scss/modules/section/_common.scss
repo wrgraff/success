@@ -55,7 +55,10 @@
 	padding: 24px 0;
 
 	h1, h2, h3, h4, h5, h6 {
-		margin-bottom: 44px;
+		margin-bottom: 24px;
+		@media (min-width: map-get($breakpoints, medium)) {
+			margin-bottom: 44px;
+		}
 		color: color(secondary);
 	}
 }

@@ -1,0 +1,83 @@
+{% set title = '' %}
+{% set activePage = 'contacts' %}
+{% set breadcrumbsItems = [
+    {
+        name: "Контакты"
+    }
+] %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+	<section class="section section_contacts">
+		<div class="contacts">
+			<div class="contacts__map" id="map">
+				<img src="/static/img/map.png" alt="196247, СПБ, Ленинский проспект, д. 160, оф. 609">
+			</div>
+			<div class="container">
+				<div class="contacts__details">
+					<p class="contacts__address">196247, СПБ,
+					Ленинский проспект,
+					д.160, оф.609</p>
+					<p class="contacts__phones">
+						<a href="tel:+79667587577">+7 966 758 75 77</a>
+						<a href="tel:+78006007448">8 800 600 74 48</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="page-main__section section section_form">
+		<div class="container">
+			<h2>Остались вопросы?</h2>
+
+			<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+				<div class="flex__item">
+					<label class="form__item field">
+						<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+						<p class="visually-hidden">Телефон</p>
+					</label>
+				</div>
+
+				<div class="flex__item">
+					<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+				</div>
+
+				<div class="flex__item">
+					<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=70c9c793-8a51-47a8-aaef-de74f2a2eee5&lang=ru_RU" type="text/javascript"></script>
+	<script type="text/javascript">
+		var mapAddress = document.querySelector('.contacts__address').textContent;
+		ymaps.ready(init);
+		function init(){
+			var myMap = new ymaps.Map("map", {
+				center: [ 59.990665, 30.324447 ],
+				zoom: 20
+			});
+
+			ymaps.geocode(mapAddress, {
+				results: 1
+			}).then(function (res) {
+				var firstGeoObject = res.geoObjects.get(0),
+					coords = firstGeoObject.geometry.getCoordinates(),
+					bounds = firstGeoObject.properties.get('boundedBy');
+
+				firstGeoObject.options.set('preset', 'islands#redIcon');
+				firstGeoObject.properties.set('iconCaption', 'Офис ЦЭР Успех');
+
+				myMap.geoObjects.add(firstGeoObject);
+				myMap.setBounds(bounds, {
+					checkZoomRange: true
+				});
+
+				document.querySelector('.contacts__map').classList.add('contacts__map_loaded');
+			});
+		}
+	</script>
+{% endblock %}

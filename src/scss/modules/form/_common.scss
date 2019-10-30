@@ -1,11 +1,8 @@
 .form__item {
-	&:not(:last-child) {
-		margin-bottom: 20px;
-	}
+	margin-bottom: 20px;
 }
 
 .form__comment {
-	margin-bottom: 0;
 	font-size: font-size(small);
 
 	a {

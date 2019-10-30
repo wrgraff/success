@@ -66,7 +66,7 @@
 								<a href="/estate/" class="menu__link">Недвижимость</a>
 							</li>
 
-							<li class="menu__item menu__item_active">
+							<li class="menu__item">
 								<a href="/ddu/" class="menu__link">ДДУ</a>
 							</li>
 
@@ -117,75 +117,83 @@
 					</li>
 
 					<li class="breadcrumbs__item">
-						ДДУ
+						Контакты
 					</li>
 				</ul>
 			</header>
 
 			<main class="page-main">
-				<section class="section section_content">
-					<div class="container">
-						<article class="content flex flex_columns_1 flex_columns_medium_2">
-							<div class="flex__item flex__item_1">
-								<h1>ДДУ</h1>
-								<p>На текущий момент при покупке недвижимости по ДДУ или спустя время, при наличии на руках уже заключенного Договора, Участники долевого строительства сталкиваются с проблемами с получением своей недвижимости.</p>
-								<p>Юристы Компании по ДДУ – это специалисты в сфере 214-ФЗ с многолетней практикой по ведению деятельности Застройщиков. Мы как никто иной знаем о всех возможных требованиях и уловках Застройщиков и готовы решить/предотвратить все проблемы по ДДУ и защитить Ваши интересы!</p>
-								<a href="#" class="content__button button button_color_secondary">Заключить сделку</a>
+				<section class="section section_contacts">
+					<div class="contacts">
+						<div class="contacts__map" id="map">
+							<img src="/static/img/map.png" alt="196247, СПБ, Ленинский проспект, д. 160, оф. 609" />
+						</div>
+						<div class="container">
+							<div class="contacts__details">
+								<p class="contacts__address">196247, СПБ, Ленинский проспект, д.160, оф.609</p>
+								<p class="contacts__phones">
+									<a href="tel:+79667587577">+7 966 758 75 77</a>
+									<a href="tel:+78006007448">8 800 600 74 48</a>
+								</p>
 							</div>
-							<div class="flex__item content__img" style="background-image: url(/static/img/bg/ddu.jpg)"></div>
-						</article>
+						</div>
 					</div>
 				</section>
 
-				<section class="section section_small section_services">
+				<section class="page-main__section section section_form">
 					<div class="container">
-						<h2>Популярные услуги</h2>
+						<h2>Остались вопросы?</h2>
 
-						<ul class="services flex flex_columns_1 flex_columns_small_2 flex_columns_medium_3 flex_columns_large_4">
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Проверка Застройщика/ объекта</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Проверка ДДУ</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Взыскание неустойки по&nbsp;ДДУ</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Споры по ДДУ</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Банкротство Застройщика</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Сделка по ДДУ (уступка права требования)</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Регистрация права собственности</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Консультация юриста при заключении ДДУ</a>
-							</li>
-							<li class="services__item flex__item flex__item_1">
-								<a href="#" class="services__link">Консультация по приемке квартиры</a>
-							</li>
-						</ul>
+						<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+							<div class="flex__item">
+								<label class="form__item field">
+									<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+									<p class="visually-hidden">Телефон</p>
+								</label>
+							</div>
+
+							<div class="flex__item">
+								<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+							</div>
+
+							<div class="flex__item">
+								<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+							</div>
+						</form>
 					</div>
 				</section>
 
-				<section class="section section_small section_advantages">
-					<div class="container">
-						<h2>Преимущества:</h2>
+				<script src="https://api-maps.yandex.ru/2.1/?apikey=70c9c793-8a51-47a8-aaef-de74f2a2eee5&lang=ru_RU" type="text/javascript"></script>
+				<script type="text/javascript">
+					var mapAddress = document.querySelector(".contacts__address").textContent;
+					ymaps.ready(init);
+					function init() {
+						var myMap = new ymaps.Map("map", {
+							center: [59.990665, 30.324447],
+							zoom: 20
+						});
 
-						<ul class="advantages flex flex_columns_1 flex_columns_small_2 flex_columns_medium_3">
-							<li class="advantages__item flex__item flex__item_1"><strong class="advantages__heading">Опыт</strong> работы со всеми видами расчетов (субсидии, социальные выплаты, кредиты, мат.кипиталы, счета – эскроу, аккредитивы и прочее)</li>
-							<li class="advantages__item flex__item flex__item_1"><strong class="advantages__heading">Стаж</strong> работы в сфере недвижимости более 10 лет</li>
-							<li class="advantages__item flex__item flex__item_1"><strong class="advantages__heading">Контроль</strong> регистрации в Росреестре</li>
-							<li class="advantages__item flex__item flex__item_1"><strong class="advantages__heading">Совершение действий</strong> с объектами недвижимости только опытными юристами</li>
-							<li class="advantages__item flex__item flex__item_1"><strong class="advantages__heading">Экстерриториальный</strong> принцип работы на рынке недвижимости (по всей РФ)</li>
-						</ul>
-					</div>
-				</section>
+						ymaps
+							.geocode(mapAddress, {
+								results: 1
+							})
+							.then(function(res) {
+								var firstGeoObject = res.geoObjects.get(0),
+									coords = firstGeoObject.geometry.getCoordinates(),
+									bounds = firstGeoObject.properties.get("boundedBy");
+
+								firstGeoObject.options.set("preset", "islands#redIcon");
+								firstGeoObject.properties.set("iconCaption", "Офис ЦЭР Успех");
+
+								myMap.geoObjects.add(firstGeoObject);
+								myMap.setBounds(bounds, {
+									checkZoomRange: true
+								});
+
+								document.querySelector(".contacts__map").classList.add("contacts__map_loaded");
+							});
+					}
+				</script>
 			</main>
 
 			<footer class="page-footer">
