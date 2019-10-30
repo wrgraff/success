@@ -300,6 +300,7 @@ function initPriceTitles(items) {
 	if (!items) {return};
 	for (item of items) {
 		let itemTitleCopy = addElement('p', 'price__title-copy');
+		itemTitleCopy.setAttribute('aria-hidden', 'true');
 		itemTitleCopy.textContent = item.querySelector('.price__title').textContent;
 
 		item.classList.add('price__item_extended');
