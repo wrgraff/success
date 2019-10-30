@@ -24,7 +24,7 @@
     transition: background-color 250ms;
 
     .is-open & {
-        background-color: rgba(color(black), .5);
+        background-color: rgba(color(black), .85);
     }
 }
 .modal__overlay-close {

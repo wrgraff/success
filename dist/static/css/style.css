@@ -6347,7 +6347,7 @@ body {
   z-index: 6;
   transition: background-color 250ms; }
   .is-open .modal__overlay {
-    background-color: rgba(0, 0, 0, 0.5); }
+    background-color: rgba(0, 0, 0, 0.85); }
 
 .modal__overlay-close {
   position: absolute;
