@@ -1,9 +1,12 @@
 // Site utils
+//=require utils/throttle.js
 //=require utils/addElement.js
 
 // Site apps
 //=require app/menu.js
 //=require app/validation.js
+//=require app/equalizer.js
+//=require app/price.js
 
 // Vendor
 //=require vendor/micromodal/common.js
