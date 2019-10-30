@@ -1,21 +1,21 @@
-.content__img {
-	position: relative;
-	z-index: -1;
-
-	display: none;
-	margin-top: -120px;
-
-	background-repeat: no-repeat;
-	background-position: 50% 100%;
-	background-size: contain;
-
-	@media (min-width: map-get($breakpoints, medium)) {
-		display: block;
-	}
-	@media (min-width: map-get($breakpoints, xlarge)) {
-		background-size: auto;
-	}
-}
+// .content__img {
+// 	position: relative;
+// 	z-index: -1;
+//
+// 	display: none;
+// 	margin-top: -120px;
+//
+// 	background-repeat: no-repeat;
+// 	background-position: 50% 100%;
+// 	background-size: contain;
+//
+// 	@media (min-width: map-get($breakpoints, medium)) {
+// 		display: block;
+// 	}
+// 	@media (min-width: map-get($breakpoints, xlarge)) {
+// 		background-size: auto;
+// 	}
+// }
 
 .content__button {
 	margin-bottom: 20px;

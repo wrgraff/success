@@ -6215,7 +6215,6 @@ body {
   margin-bottom: 56px; }
 
 .page-footer {
-  margin-top: 80px;
   padding: 40px 0 54px;
   color: #fff;
   background-color: #202020; }
@@ -6292,6 +6291,23 @@ body {
       margin-left: -8px;
       font-size: 72px; } }
 
+.section_content {
+  position: relative; }
+
+.section__img {
+  position: absolute;
+  top: -160px;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  display: none;
+  background-repeat: no-repeat;
+  background-position: 40px 100%; }
+  @media (min-width: 960px) {
+    .section__img {
+      display: block; } }
+
 .section_offers {
   padding-top: 48px;
   background-color: #fe6161; }
@@ -6318,12 +6334,17 @@ body {
 
 .section_form {
   padding: 24px 0; }
+  .section_form:last-child {
+    margin-bottom: 64px; }
   .section_form h1, .section_form h2, .section_form h3, .section_form h4, .section_form h5, .section_form h6 {
     margin-bottom: 24px;
     color: #fe6161; }
     @media (min-width: 960px) {
       .section_form h1, .section_form h2, .section_form h3, .section_form h4, .section_form h5, .section_form h6 {
         margin-bottom: 44px; } }
+  .section_advantages + .section_form,
+  .section_services + .section_form {
+    margin-top: 64px; }
 
 .modal {
   visibility: hidden;
@@ -6580,21 +6601,6 @@ body {
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px; }
-
-.content__img {
-  position: relative;
-  z-index: -1;
-  display: none;
-  margin-top: -120px;
-  background-repeat: no-repeat;
-  background-position: 50% 100%;
-  background-size: contain; }
-  @media (min-width: 960px) {
-    .content__img {
-      display: block; } }
-  @media (min-width: 1920px) {
-    .content__img {
-      background-size: auto; } }
 
 .content__button {
   margin-bottom: 20px;
@@ -6854,6 +6860,9 @@ body {
   background-repeat: no-repeat;
   background-position: 50% 100%;
   background-image: url(../img/decor/man.png); }
+  @media (min-aspect-ratio: 2 / 1) {
+    .feedbacks__img {
+      background-image: url(../img/decor/man@2x.png); } }
   @media (min-width: 960px) {
     .feedbacks__img {
       display: block; } }

@@ -27,6 +27,14 @@ const addElement = function(elTag, elClass) {
 
 
 // Site apps
+let imgSections = document.querySelectorAll('[data-section-img]');
+
+imgSections.forEach(section => {
+    let imgContainer = addElement('div', 'section__img');
+    imgContainer.style.backgroundImage = 'url(' + section.dataset.sectionImg + ')';
+    section.append(imgContainer);
+});
+
 let menuToggler = document.querySelector('.page-header__menu-toggler'),
 	menu = document.querySelector('.page-header__menu');
 

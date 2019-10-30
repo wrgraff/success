@@ -3,6 +3,7 @@
 //=require utils/addElement.js
 
 // Site apps
+//=require app/section-img.js
 //=require app/menu.js
 //=require app/validation.js
 //=require app/equalizer.js

@@ -20,6 +20,27 @@
 	}
 }
 
+.section_content {
+	position: relative;
+}
+.section__img {
+	position: absolute;
+	top: -160px;
+	right: 0;
+	bottom: 0;
+	left: 50%;
+	z-index: -1;
+
+	display: none;
+
+	background-repeat: no-repeat;
+	background-position: 40px 100%;
+
+	@media (min-width: map-get($breakpoints, medium)) {
+		display: block;
+	}
+}
+
 .section_offers {
 	padding-top: $bit * 6;
 	background-color: color(secondary);
@@ -54,11 +75,20 @@
 .section_form {
 	padding: 24px 0;
 
+	&:last-child {
+	    margin-bottom: 64px;
+	}
+
 	h1, h2, h3, h4, h5, h6 {
 		margin-bottom: 24px;
 		@media (min-width: map-get($breakpoints, medium)) {
 			margin-bottom: 44px;
 		}
 		color: color(secondary);
+	}
+
+	.section_advantages + &,
+	.section_services + & {
+		margin-top: 64px;
 	}
 }

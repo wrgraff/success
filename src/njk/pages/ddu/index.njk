@@ -8,16 +8,18 @@
 {% extends '../layouts/index.njk' %}
 
 {% block content %}
-	<section class="section section_content">
+	<section class="section section_content" data-section-img="/static/img/bg/{{ activePage }}.jpg">
 		<div class="container">
-			<article class="content flex flex_columns_1 flex_columns_medium_2">
-				<div class="flex__item flex__item_1">
-					<h1>ДДУ</h1>
-					<p>На текущий момент при покупке недвижимости по ДДУ или спустя время, при наличии на руках уже заключенного Договора, Участники долевого строительства сталкиваются с проблемами с получением своей недвижимости.</p>
-					<p>Юристы Компании по ДДУ – это специалисты в сфере 214-ФЗ с многолетней практикой по ведению деятельности Застройщиков. Мы как никто иной знаем о всех возможных требованиях и уловках Застройщиков и готовы решить/предотвратить все проблемы по ДДУ и защитить Ваши интересы!</p>
-					<a href="#" class="content__button button button_color_secondary">Заключить сделку</a>
+			<article class="content">
+				<h1>ДДУ</h1>
+
+				<div class="flex flex_columns_1 flex_columns_medium_2">
+					<div class="flex__item flex__item_1">
+						<p>На текущий момент при покупке недвижимости по ДДУ или спустя время, при наличии на руках уже заключенного Договора, Участники долевого строительства сталкиваются с проблемами с получением своей недвижимости.</p>
+						<p>Юристы Компании по ДДУ – это специалисты в сфере 214-ФЗ с многолетней практикой по ведению деятельности Застройщиков. Мы как никто иной знаем о всех возможных требованиях и уловках Застройщиков и готовы решить/предотвратить все проблемы по ДДУ и защитить Ваши интересы!</p>
+						<a href="#" class="content__button button button_color_secondary">Заключить сделку</a>
+					</div>
 				</div>
-				<div class="flex__item content__img" style="background-image: url(/static/img/bg/ddu.jpg)"></div>
 			</article>
 		</div>
 	</section>
@@ -79,6 +81,29 @@
 					<strong class="advantages__heading">Экстерриториальный</strong> принцип работы на рынке недвижимости (по всей РФ)
 				</li>
 			</ul>
+		</div>
+	</section>
+
+	<section class="page-main__section section section_form">
+		<div class="container">
+			<h2>Остались вопросы?</h2>
+
+			<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+				<div class="flex__item">
+					<label class="form__item field">
+						<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+						<p class="visually-hidden">Телефон</p>
+					</label>
+				</div>
+
+				<div class="flex__item">
+					<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+				</div>
+
+				<div class="flex__item">
+					<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+				</div>
+			</form>
 		</div>
 	</section>
 {% endblock %}

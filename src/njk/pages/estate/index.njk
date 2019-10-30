@@ -9,16 +9,17 @@
 {% extends '../layouts/index.njk' %}
 
 {% block content %}
-	<section class="section section_content">
+	<section class="section section_content" data-section-img="/static/img/bg/{{ activePage }}.jpg">
 		<div class="container">
-			<article class="content flex flex_columns_1 flex_columns_medium_2">
-				<div class="flex__item flex__item_1">
-					<h1>Недвижимость</h1>
-					<p>Предлагаем помощь в приобретении, оформлении, а также правовой проверке (анализу) недвижимости. Приступаем к сопровождению сделки на любом этапе: от проверки контрагента, которому принадлежит недвижимость, до регистрации прав на объект. Сопровождаем сделки с городской и загородной недвижимостью.</p>
-					<p>Грамотное оформление Договора, а также доскональная проверка объекта недвижимости опытным юристом поможет избежать возможных проблем, возникающих после оформления перехода права собственности!</p>
-					<a href="#" class="content__button button button_color_secondary">Заключить сделку</a>
+			<article class="content">
+				<h1>Недвижимость</h1>
+				<div class="flex flex_columns_1 flex_columns_medium_2">
+					<div class="flex__item flex__item_1">
+						<p>Предлагаем помощь в приобретении, оформлении, а также правовой проверке (анализу) недвижимости. Приступаем к сопровождению сделки на любом этапе: от проверки контрагента, которому принадлежит недвижимость, до регистрации прав на объект. Сопровождаем сделки с городской и загородной недвижимостью.</p>
+						<p>Грамотное оформление Договора, а также доскональная проверка объекта недвижимости опытным юристом поможет избежать возможных проблем, возникающих после оформления перехода права собственности!</p>
+						<a href="#" class="content__button button button_color_secondary">Заключить сделку</a>
+					</div>
 				</div>
-				<div class="flex__item content__img" style="background-image: url(/static/img/bg/estate.jpg)"></div>
 			</article>
 		</div>
 	</section>
@@ -118,6 +119,29 @@
 					<a href="#" class="cases__button button button_color_secondary">Заключить сделку</a>
 				</li>
 			</ul>
+		</div>
+	</section>
+
+	<section class="page-main__section section section_form">
+		<div class="container">
+			<h2>Остались вопросы?</h2>
+
+			<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+				<div class="flex__item">
+					<label class="form__item field">
+						<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+						<p class="visually-hidden">Телефон</p>
+					</label>
+				</div>
+
+				<div class="flex__item">
+					<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+				</div>
+
+				<div class="flex__item">
+					<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+				</div>
+			</form>
 		</div>
 	</section>
 {% endblock %}
