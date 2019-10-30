@@ -36,7 +36,7 @@
 	text-align: center;
 	font-weight: 700;
 
-	transition: color 200ms, background-color 200ms;
+	transition: color 200ms, background-color 200ms, border-color 200ms;
 
 	&:hover {
 		color: color(medium-gray);
@@ -47,6 +47,15 @@
 		outline-style: solid;
 		outline-width: 2px;
 		outline-offset: -12px;
+	}
+	.menu-info__item_active & {
+		color: color(white);
+		background-color: color(primary);
+
+		&:hover {
+			border-color: darken(color(primary), 5%);
+			background-color: darken(color(primary), 5%);
+		}
 	}
 
 	@media (min-width: map-get($breakpoints, medium)) {
