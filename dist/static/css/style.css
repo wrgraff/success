@@ -6969,7 +6969,8 @@ body {
   position: relative;
   display: flex;
   margin-top: 16px;
-  margin-bottom: 16px; }
+  margin-bottom: 16px;
+  font-weight: 700; }
   @media (min-width: 600px) {
     .services__item {
       margin-top: 24px;
@@ -7009,7 +7010,7 @@ body {
   flex-grow: 1;
   padding-right: 32px;
   color: #000;
-  font-weight: 700; }
+  font-weight: inherit; }
   .services__link:hover {
     color: #fff; }
   .services__link:focus {
