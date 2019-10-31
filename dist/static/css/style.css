@@ -6329,6 +6329,11 @@ body {
   padding-bottom: 32px;
   background-color: #bbd40c; }
 
+.section_registration {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: #bbd40c; }
+
 .section_advantages {
   padding-top: 32px;
   padding-bottom: 32px;
@@ -6607,6 +6612,10 @@ body {
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px; }
+
+@media (min-width: 960px) {
+  .content {
+    min-height: 340px; } }
 
 .content__button {
   margin-bottom: 20px;
@@ -7018,6 +7027,55 @@ body {
     outline-style: solid;
     outline-width: 2px;
     outline-offset: 2px; }
+
+.registration {
+  counter-reset: registration;
+  font-size: 20px;
+  font-weight: 700;
+  list-style: none; }
+  @media (min-width: 960px) {
+    .registration {
+      padding: 24px 0 0;
+      font-size: 24px; } }
+
+.registration__item {
+  counter-increment: registration;
+  position: relative;
+  line-height: 1.2; }
+  .registration__item:not(:last-child) {
+    margin-bottom: 24px; }
+    @media (min-width: 600px) {
+      .registration__item:not(:last-child) {
+        margin-bottom: 32px; } }
+    @media (min-width: 960px) {
+      .registration__item:not(:last-child) {
+        margin-bottom: 24px;
+        padding-right: 12px; } }
+  .registration__item::before {
+    content: counter(registration) ".";
+    position: absolute;
+    top: -3px;
+    right: 102%;
+    right: calc(100% + 12px);
+    font-size: 28px; }
+    @media (min-width: 960px) {
+      .registration__item::before {
+        position: static;
+        display: block;
+        margin-bottom: 38px;
+        font-size: 48px; } }
+  @media (min-width: 960px) {
+    .registration__item:not(:first-child)::after {
+      content: '';
+      position: absolute;
+      top: 100px;
+      right: 100%;
+      display: block;
+      width: 2px;
+      height: 22px;
+      margin-right: 16px;
+      background-color: #000;
+      transform: rotate(45deg); } }
 
 .advantages {
   padding: 0;

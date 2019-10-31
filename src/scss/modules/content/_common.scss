@@ -17,6 +17,12 @@
 // 	}
 // }
 
+.content {
+	@media (min-width: map-get($breakpoints, medium)) {
+		min-height: 340px;
+	}
+}
+
 .content__button {
 	margin-bottom: 20px;
 	padding-top: 13px;
