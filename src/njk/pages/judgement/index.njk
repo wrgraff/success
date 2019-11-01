@@ -1,0 +1,124 @@
+{% set title = '' %}
+{% set activePage = 'judgement' %}
+{% set breadcrumbsItems = [
+    {
+        name: "Суды/Споры"
+    }
+] %}
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+	<section class="section section_content" data-section-img="/static/img/bg/{{ activePage }}.jpg">
+		<div class="container">
+			<article class="content">
+				<h1>Суды/Споры</h1>
+
+				<div class="flex flex_columns_1 flex_columns_medium_2">
+					<div class="flex__item flex__item_1">
+						<p>Подготовка обращения и юридическая помощь в суде:<br>
+						команда профессиональных юристов поможет в решении судебных тяжб, от составления претензии или иска до полного сопровождения дела в суде, переговоров, сделки с недвижимостью. Объективно оценим перспективы дела после правового анализа представленных документов, установим сроки и точную стоимость работ.</p>
+						<a href="#" class="content__button button button_color_secondary">Заключить сделку</a>
+					</div>
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="section section_small section_advantages">
+		<div class="container">
+			<h2>Преимущества:</h2>
+
+			<ul class="advantages flex flex_columns_1 flex_columns_small_2 flex_columns_medium_3">
+				<li class="advantages__item flex__item flex__item_1">
+                    <strong class="advantages__heading">Представление интересов</strong>
+                    клиента в&nbsp;суде любой инстанции<br/>
+                </li>
+                <li class="advantages__item flex__item flex__item_1">
+                    <strong class="advantages__heading">Помощь</strong>
+                    при решении претензии в&nbsp;досудебном порядке<br/>
+                </li>
+                <li class="advantages__item flex__item flex__item_1">
+                    <strong class="advantages__heading">Сбор и&nbsp;анализ</strong>
+                    всех необходимых документов<br/>
+                </li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="page-main__section section section_destinations">
+		<div class="container">
+			<h2 class="section__heading">Направления деятельности наших специалистов</h2>
+
+			<div class="flex flex_columns_1 flex_columns_small_2 flex_columns_medium_3 flex_justify_center destinations">
+				<div class="flex__item flex__item_1 destinations__item">
+					<h3 class="destinations__title">Гражданские споры</h3>
+
+					<ul class="destinations__list">
+						<li>Семейные споры</li>
+						<li>Наследственные споры</li>
+						<li>Трудовые споры</li>
+						<li>Жилищные и земельные споры</li>
+						<li>Долговые обязательства</li>
+						<li>Взыскание ущерба от ДТП</li>
+						<li>Выплаты алиментов</li>
+					</ul>
+
+					<a href="#" class="destinations__button button button_color_secondary">Получить консультацию</a>
+				</div>
+
+				<div class="flex__item flex__item_1 destinations__item">
+					<h3 class="destinations__title">Уголовные дела</h3>
+
+					<ul class="destinations__list">
+						<li>Защита в досудебном порядке</li>
+						<li>Подготовка заявлений, ходатойств, жалоб</li>
+						<li>Подготовка доказательной базы</li>
+						<li>Защита в судебном порядке</li>
+						<li>Обжалование судебных актов</li>
+						<li>Защита в ходе иных процессуальных действий.</li>
+					</ul>
+
+					<a href="#" class="destinations__button button button_color_secondary">Получить консультацию</a>
+				</div>
+
+				<div class="flex__item flex__item_1 destinations__item">
+					<h3 class="destinations__title">Арбитражные споры</h3>
+
+					<ul class="destinations__list">
+						<li>Взыскание долгов и неустоек</li>
+						<li>Решение возникших споров</li>
+						<li>Процедура банкротства</li>
+						<li>Корпоративные споры</li>
+						<li>Восстановление деловой репутации</li>
+						<li>Возмещение ущерба</li>
+					</ul>
+
+					<a href="#" class="destinations__button button button_color_secondary">Получить консультацию</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="page-main__section section section_form">
+		<div class="container">
+			<h2>Остались вопросы?</h2>
+
+			<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+				<div class="flex__item">
+					<label class="form__item field">
+						<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+						<p class="visually-hidden">Телефон</p>
+					</label>
+				</div>
+
+				<div class="flex__item">
+					<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+				</div>
+
+				<div class="flex__item">
+					<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}
