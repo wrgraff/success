@@ -1,0 +1,30 @@
+{% set title = '' %}
+{% set activePage = 'get-consultation' %}
+{% set breadcrumbsItems = [
+    {
+        name: "Заявка на связь"
+    }
+] %}
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+	<section class="section section_content">
+		<div class="container">
+			<article class="content">
+				<h1>Получить консультацию</h1>
+				<p class="subheading">Получение качественной юридической помощи</p>
+
+				<form action="#" class="modal__form form">
+					<label class="form__item field">
+						<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+						<p class="visually-hidden">Телефон</p>
+					</label>
+
+					<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+
+					<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+				</form>
+			</article>
+		</div>
+	</section>
+{% endblock %}

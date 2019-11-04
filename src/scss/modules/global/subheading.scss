@@ -1,0 +1,9 @@
+.subheading {
+	font-size: 32px;
+	font-weight: 700;
+
+	h1 + & {
+		margin-top: $bit * -5;
+		margin-bottom: $bit * 6;
+	}
+}
