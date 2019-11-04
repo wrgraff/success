@@ -61,10 +61,9 @@ gulp.task('svg', () => {
 });
 gulp.task('img', () => {
 	return gulp.src('src/img/**/*')
-		.pipe(imagemin())
+		.pipe(imagemin());
+
         .pipe(gulp.dest('dist/static/img'))
-        .pipe(webp())
-		.pipe(gulp.dest('dist/static/img'));
 });
 
 gulp.task('default', function () {
