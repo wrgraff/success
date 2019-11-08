@@ -61,10 +61,25 @@ gulp.task('svg', () => {
 });
 gulp.task('img', () => {
 	return gulp.src('src/img/**/*')
-		.pipe(imagemin());
+		.pipe(imagemin())
 
         .pipe(gulp.dest('dist/static/img'))
 });
+
+gulp.task('favicons', () => {
+	return gulp.src('src/favicons/**/*')
+		.pipe(imagemin([
+		    imagemin.jpegtran({progressive: true}),
+		    imagemin.optipng({optimizationLevel: 3}),
+		    imagemin.svgo({
+		        plugins: [
+		            {cleanupIDs: true}
+		        ]
+		    })
+		]))
+        .pipe(gulp.dest('dist/static/img/favicons'));
+});
+
 
 gulp.task('default', function () {
 	browserSync.init({
