@@ -1,9 +1,22 @@
 .subheading {
-	font-size: 32px;
+	@media (min-width: map-get($breakpoints, small)) {
+		font-size: 20px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 24px;
+	}
+	@media (min-width: map-get($breakpoints, large)) {
+		font-size: 32px;
+	}
 	font-weight: 700;
 
 	h1 + & {
-		margin-top: $bit * -5;
+		@media (min-width: map-get($breakpoints, small)) {
+			margin-top: $bit * -2;
+		}
+		@media (min-width: map-get($breakpoints, medium)) {
+			margin-top: $bit * -5;
+		}
 		margin-bottom: $bit * 6;
 	}
 }

@@ -5718,11 +5718,24 @@ body {
     z-index: auto; } }
 
 .subheading {
-  font-size: 32px;
   font-weight: 700; }
+  @media (min-width: 600px) {
+    .subheading {
+      font-size: 20px; } }
+  @media (min-width: 960px) {
+    .subheading {
+      font-size: 24px; } }
+  @media (min-width: 1200px) {
+    .subheading {
+      font-size: 32px; } }
   h1 + .subheading {
-    margin-top: -40px;
     margin-bottom: 48px; }
+    @media (min-width: 600px) {
+      h1 + .subheading {
+        margin-top: -16px; } }
+    @media (min-width: 960px) {
+      h1 + .subheading {
+        margin-top: -40px; } }
 
 .button {
   display: inline-block;
