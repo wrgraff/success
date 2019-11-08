@@ -1,0 +1,19 @@
+{% set title = '' %}
+{% set activePage = 'get-consultation' %}
+{% set breadcrumbsItems = [
+    {
+        name: "Отчет об отправке"
+    }
+] %}
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+	<section class="section section_content">
+		<div class="container">
+			<article class="content">
+				<h1>Сообщение успешно отправлено</h1>
+				<p class="subheading">Наш специалист свяжется свами в ближайшее время</p>
+			</article>
+		</div>
+	</section>
+{% endblock %}
