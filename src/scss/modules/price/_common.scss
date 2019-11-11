@@ -103,6 +103,20 @@
 	margin-bottom: 24px;
 }
 
+.price__value {
+	margin-bottom: 24px;
+
+	font-size: 24px;
+	font-weight: 700;
+
+	@media (min-width: map-get($breakpoints, small)) {
+		font-size: 32px;
+	}
+	@media (min-width: map-get($breakpoints, medium)) {
+		font-size: 36px;
+	}
+}
+
 .price__button {
 	min-width: 244px;
 }
