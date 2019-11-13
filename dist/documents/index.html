@@ -97,13 +97,13 @@
 					<div class="flex flex_columns_1 flex_columns_medium_12 promo">
 						<div class="flex__item">
 							<ul class="menu-info" role="navigation" aria-label="Меню сайта">
-								<li class="menu-info__item">
+								<li class="menu-info__item menu-info__item_active">
 									<a href="/documents/" class="menu-info__link">Формы документов</a>
 								</li>
 								<li class="menu-info__item">
 									<a href="/price/" class="menu-info__link">Стоимость услуг</a>
 								</li>
-								<li class="menu-info__item menu-info__item_active">
+								<li class="menu-info__item">
 									<a href="/contacts/" class="menu-info__link">Контакты</a>
 								</li>
 							</ul>
@@ -117,29 +117,47 @@
 					</li>
 
 					<li class="breadcrumbs__item">
-						Контакты
+						Формы документов
 					</li>
 				</ul>
 			</header>
 
 			<main class="page-main">
-				<section class="section section_contacts">
+				<section class="section section_price">
 					<div class="container">
-						<h1>Контакты</h1>
-					</div>
-					<div class="contacts">
-						<div class="contacts__map" id="map">
-							<img src="/static/img/map.png" alt="196247, СПБ, Ленинский проспект, д. 160, оф. 609" />
-						</div>
-						<div class="container">
-							<div class="contacts__details">
-								<p class="contacts__address">196247, СПБ, Ленинский проспект, д.160, оф.609</p>
-								<p class="contacts__phones">
-									<a href="tel:+79667587577">+7 966 758 75 77</a>
-									<a href="tel:+78006007448">8 800 600 74 48</a>
-								</p>
-							</div>
-						</div>
+						<h1>Формы документов</h1>
+
+						<ul class="documents flex flex_columns_1 flex_columns_small_2 flex_columns_medium_3">
+							<li class="documents__item flex__item flex__item_1">
+								<p class="documents__title">Акт приема-передачи квартиры.docx</p>
+								<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+							</li>
+
+							<li class="documents__item flex__item flex__item_1">
+								<p class="documents__title">Договор купли-продажи между физическими лицами (ипотека, расчеты через банковскую ячейку).docx</p>
+								<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+							</li>
+
+							<li class="documents__item flex__item flex__item_1">
+								<p class="documents__title">Договор купли-продажи между физическими лицами (расчеты через банковскую ячейку).docx</p>
+								<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+							</li>
+
+							<li class="documents__item flex__item flex__item_1">
+								<p class="documents__title">Расписка о получении денежных средств по Договору купли-продажи.docx</p>
+								<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+							</li>
+
+							<li class="documents__item flex__item flex__item_1">
+								<p class="documents__title">Договор дарения квартиры.docx</p>
+								<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+							</li>
+
+							<li class="documents__item flex__item flex__item_1">
+								<p class="documents__title">Электронная регистрация прав по всей РФ.docx</p>
+								<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+							</li>
+						</ul>
 					</div>
 				</section>
 
@@ -165,38 +183,6 @@
 						</form>
 					</div>
 				</section>
-
-				<script src="https://api-maps.yandex.ru/2.1/?apikey=70c9c793-8a51-47a8-aaef-de74f2a2eee5&lang=ru_RU" type="text/javascript"></script>
-				<script type="text/javascript">
-					var mapAddress = document.querySelector(".contacts__address").textContent;
-					ymaps.ready(init);
-					function init() {
-						var myMap = new ymaps.Map("map", {
-							center: [59.990665, 30.324447],
-							zoom: 20
-						});
-
-						ymaps
-							.geocode(mapAddress, {
-								results: 1
-							})
-							.then(function(res) {
-								var firstGeoObject = res.geoObjects.get(0),
-									coords = firstGeoObject.geometry.getCoordinates(),
-									bounds = firstGeoObject.properties.get("boundedBy");
-
-								firstGeoObject.options.set("preset", "islands#redIcon");
-								firstGeoObject.properties.set("iconCaption", "Офис ЦЭР Успех");
-
-								myMap.geoObjects.add(firstGeoObject);
-								myMap.setBounds(bounds, {
-									checkZoomRange: true
-								});
-
-								document.querySelector(".contacts__map").classList.add("contacts__map_loaded");
-							});
-					}
-				</script>
 			</main>
 
 			<footer class="page-footer">

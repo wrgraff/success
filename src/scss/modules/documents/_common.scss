@@ -1,0 +1,52 @@
+.documents {
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+
+.documents__item {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 20px;
+	@media (min-width: map-get($breakpoints, medium)) {
+		margin-bottom: 24px;
+	}
+	padding: 20px;
+
+	border: 1px solid color(primary);
+
+	&::before {
+		content: '';
+		display: block;
+		width: 40px;
+		height: 40px;
+		margin-bottom: 12px;
+
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		background-image: url(../img/ico/doc.svg);
+	}
+}
+
+.documents__title {
+	min-height: 52px;
+
+	font-size: font-size(small);
+}
+
+.documents__button {
+	width: 100%;
+	max-width: 244px;
+	margin-top: auto;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
+}

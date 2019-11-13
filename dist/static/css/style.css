@@ -7439,3 +7439,45 @@ body {
     border-bottom: none; }
     .contacts__phones a:hover {
       color: #fff; }
+
+.documents {
+  padding: 0;
+  list-style: none;
+  text-align: center; }
+
+.documents__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #bbd40c; }
+  @media (min-width: 960px) {
+    .documents__item {
+      margin-bottom: 24px; } }
+  .documents__item::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 12px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(../img/ico/doc.svg); }
+
+.documents__title {
+  min-height: 52px;
+  font-size: 14px; }
+
+.documents__button {
+  width: 100%;
+  max-width: 244px;
+  margin-top: auto; }
+  .documents__button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; }

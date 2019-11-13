@@ -1,0 +1,72 @@
+{% set title = '' %}
+{% set activePage = 'documents' %}
+{% set breadcrumbsItems = [
+    {
+        name: "Формы документов"
+    }
+] %}
+
+{% extends '../layouts/index.njk' %}
+
+{% block content %}
+	<section class="section section_price">
+		<div class="container">
+			<h1>Формы документов</h1>
+
+			<ul class="documents flex flex_columns_1 flex_columns_small_2 flex_columns_medium_3">
+				<li class="documents__item flex__item flex__item_1">
+					<p class="documents__title">Акт приема-передачи квартиры.docx</p>
+					<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+				</li>
+
+				<li class="documents__item flex__item flex__item_1">
+					<p class="documents__title">Договор купли-продажи между физическими лицами (ипотека, расчеты через банковскую ячейку).docx</p>
+					<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+				</li>
+
+				<li class="documents__item flex__item flex__item_1">
+					<p class="documents__title">Договор купли-продажи между физическими лицами (расчеты через банковскую ячейку).docx</p>
+					<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+				</li>
+
+				<li class="documents__item flex__item flex__item_1">
+					<p class="documents__title">Расписка о получении денежных средств по Договору купли-продажи.docx</p>
+					<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+				</li>
+
+				<li class="documents__item flex__item flex__item_1">
+					<p class="documents__title">Договор дарения квартиры.docx</p>
+					<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+				</li>
+
+				<li class="documents__item flex__item flex__item_1">
+					<p class="documents__title">Электронная регистрация прав по всей РФ.docx</p>
+					<a href="#" class="documents__button button button_color_secondary" download>Скачать</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="page-main__section section section_form">
+		<div class="container">
+			<h2>Остались вопросы?</h2>
+
+			<form action="/form-result/" class="form flex flex_align_center flex_columns_1 flex_columns_small_2 flex_columns_medium_3" data-validate>
+				<div class="flex__item">
+					<label class="form__item field">
+						<input type="tel" name="phone" required class="field__input" placeholder="Телефон" data-validate-pattern="phone" />
+						<p class="visually-hidden">Телефон</p>
+					</label>
+				</div>
+
+				<div class="flex__item">
+					<button type="submit" class="form__item form__button button button_color_secondary">Перезвоните мне</button>
+				</div>
+
+				<div class="flex__item">
+					<p class="form__item form__comment">Нажимая на кнопку, я соглашаюсь на обработку моих <a href="#">персональных данных</a></p>
+				</div>
+			</form>
+		</div>
+	</section>
+{% endblock %}
