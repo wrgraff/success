@@ -6800,30 +6800,31 @@ body {
     position: relative;
     z-index: 3; }
   @media (min-width: 960px) {
-    .offers__item::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: -40px;
-      left: 0;
-      background-color: #bbd40c;
-      box-shadow: 0 0 40px #c24848;
-      opacity: 0;
-      transition: opacity 200ms, transform 200ms;
+    .offers__item {
       -webkit-animation-name: fade-backward;
       animation-name: fade-backward;
       -webkit-animation-duration: 200ms;
       animation-duration: 200ms;
       -webkit-animation-fill-mode: forwards;
       animation-fill-mode: forwards; }
-    .offers__item:hover, .offers__item:focus-within {
-      color: #000; }
-      .offers__item:hover::after, .offers__item:focus-within::after {
+      .offers__item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: -40px;
+        left: 0;
+        background-color: #bbd40c;
+        box-shadow: 0 0 40px #c24848;
+        opacity: 0;
+        transition: opacity 200ms, transform 200ms; }
+      .offers__item:hover, .offers__item:focus-within {
+        color: #000;
         -webkit-animation-name: fade-forward;
-        animation-name: fade-forward;
-        opacity: 1;
-        transform: scale(1.2); } }
+        animation-name: fade-forward; }
+        .offers__item:hover::after, .offers__item:focus-within::after {
+          opacity: 1;
+          transform: scale(1.2); } }
 
 .offers__heading {
   margin-bottom: 16px;

@@ -24,6 +24,10 @@
 	}
 
 	@media (min-width: map-get($breakpoints, medium)) {
+		animation-name: fade-backward;
+		animation-duration: 200ms;
+		animation-fill-mode: forwards;
+
 		&::after {
 			content: '';
 			position: absolute;
@@ -37,17 +41,15 @@
 			opacity: 0;
 
 			transition: opacity 200ms, transform 200ms;
-			animation-name: fade-backward;
-			animation-duration: 200ms;
-			animation-fill-mode: forwards;
 		}
 
 		&:hover,
 		&:focus-within {
 			color: color(black);
+			animation-name: fade-forward;
+
 
 			&::after {
-				animation-name: fade-forward;
 				opacity: 1;
 				transform: scale(1.2);
 			}
