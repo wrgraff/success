@@ -6899,8 +6899,9 @@ body {
   display: none;
   background-repeat: no-repeat;
   background-position: 50% 100%;
-  background-image: url(../img/decor/man.png); }
-  @media (min-aspect-ratio: 2 / 1) {
+  background-image: url(../img/decor/man.png);
+  background-size: contain; }
+  @media (min-aspect-ratio: 4 / 1) {
     .feedbacks__img {
       background-image: url(../img/decor/man@2x.png); } }
   @media (min-width: 960px) {
