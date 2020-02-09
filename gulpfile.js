@@ -13,6 +13,7 @@ var gulp = require('gulp'),
 	svgo = require('gulp-svgo'),
 	imagemin = require('gulp-imagemin'),
 	webp = require('gulp-webp'),
+	del = require('del'),
     browserSync = require('browser-sync').create();
 
 gulp.task('sass', function () {
@@ -80,6 +81,20 @@ gulp.task('favicons', () => {
         .pipe(gulp.dest('dist/static/img/favicons'));
 });
 
+gulp.task('del', () => {
+	return del('dist');
+});
+
+gulp.task('build', gulp.series(
+	'del',
+	'scss',
+	'njk',
+	'js',
+	'img',
+	'svg',
+	'favicons',
+	'fonts'
+));
 
 gulp.task('default', function () {
 	browserSync.init({
