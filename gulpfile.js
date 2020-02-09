@@ -49,11 +49,8 @@ gulp.task('njk', function() {
 });
 
 gulp.task('fonts', function() {
-	gulp.src('src/fonts/**/*-latin.*').pipe(gulp.dest('dist/static/fonts'));
-	gulp.src('src/fonts/**/*-latin-extended.*').pipe(gulp.dest('dist/static/fonts'));
-	gulp.src('src/fonts/**/*-cyrillic.*').pipe(gulp.dest('dist/static/fonts'));
-	gulp.src('src/fonts/**/*-slogan.*').pipe(gulp.dest('dist/static/fonts'));
-	return console.log('All needed fonts moved');
+    return gulp.src('src/fonts/**/*{woff,woff2,ttf}')
+        .pipe(gulp.dest('dist/static/fonts'));
 });
 gulp.task('svg', () => {
     return gulp.src('src/img/**/*')
@@ -87,7 +84,7 @@ gulp.task('del', () => {
 
 gulp.task('build', gulp.series(
 	'del',
-	'scss',
+    'sass',
 	'njk',
 	'js',
 	'img',
